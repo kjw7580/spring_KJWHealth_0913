@@ -18,6 +18,7 @@ header {
 }
 
 .mainLogin-box {
+	width:350px;
 	height:120px;
 	border:solid 2px black;
 }
