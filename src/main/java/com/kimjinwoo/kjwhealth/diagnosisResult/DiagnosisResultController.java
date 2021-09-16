@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class DiagnosisResultController {
 	
 	@GetMapping("/diagnosis_result")
-	public String mainView() {
+	public String diagnosisResultView() {
 		return "post/diagnosisResult";
 	}
 }

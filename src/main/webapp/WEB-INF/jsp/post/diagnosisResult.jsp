@@ -56,7 +56,7 @@
 				</div>
 				
 				<div class="text-right">
-					<button type="button" class="btn btn-primary mt-3">레시피 보러가기</button>
+					<a href="/post/recipe" class="btn btn-primary mt-3">레시피 보러가기</a>
 				</div>
 				
 				<h3 class="font-weight-bold mt-3">개인별 건강용품/식품 추천</h3>
@@ -76,7 +76,7 @@
 				</div>
 				
 				<div class="text-right">
-					<button type="button" class="btn btn-primary mt-3">모두 보러가기</button>
+					<a href="/post/health_products" class="btn btn-primary mt-3">모두 보러가기</a>
 				</div>
 			</div>
 		</div>
