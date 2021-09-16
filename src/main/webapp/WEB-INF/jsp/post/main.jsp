@@ -33,7 +33,7 @@
 		<!-- 메뉴리스트 -->
 		<nav class="mt-2">
 	        <ul class="nav nav-fill">
-	            <li class="nav-item"><a class="nav-link" href="#">진단하기</a></li>
+	            <li class="nav-item"><a class="nav-link" href="/post/diagnosis">진단하기</a></li>
 	            <li class="nav-item"><a class="nav-link" href="#">건강용품/식품</a></li>
 	            <li class="nav-item"><a class="nav-link" href="#">건강 정보 공유</a></li>
 	            <li class="nav-item"><a class="nav-link" href="#">나의 건강 기록</a></li>

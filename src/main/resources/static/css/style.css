@@ -47,6 +47,11 @@ header {
 	height:500px;		
 }
 
+.bmi-box {
+	border:solid 1px black;
+	height:210px;
+}
+
 footer {
 	height:50px;
 }
