@@ -18,7 +18,11 @@
 	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
-		<h1 class="font-weight-bold mt-2">건강용품/식품</h1>
+		<div class="d-flex justify-content-between align-items-center">
+			<h1 class="font-weight-bold mt-2">건강용품/식품</h1>
+			<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
+		</div>
+		
 		<section>
 			<div class="d-flex">
 				<div class="col-2">

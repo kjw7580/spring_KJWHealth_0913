@@ -34,9 +34,9 @@
 		<nav class="mt-2">
 	        <ul class="nav nav-fill">
 	            <li class="nav-item"><a class="nav-link" href="/post/diagnosis">진단하기</a></li>
-	            <li class="nav-item"><a class="nav-link" href="#">건강용품/식품</a></li>
-	            <li class="nav-item"><a class="nav-link" href="#">건강 정보 공유</a></li>
-	            <li class="nav-item"><a class="nav-link" href="#">나의 건강 기록</a></li>
+	            <li class="nav-item"><a class="nav-link" href="/post/health_products">건강용품/식품</a></li>
+	            <li class="nav-item"><a class="nav-link" href="/post/list_view">건강 정보 공유</a></li>
+	            <li class="nav-item"><a class="nav-link" href="/post/record">나의 건강 기록</a></li>
 	        </ul>
         </nav>
         
@@ -47,7 +47,7 @@
 	        		<!-- 건강용품/식품 -->
 	        		<div class="d-flex justify-content-between align-items-center">
 		        		<h1 class="font-weight-bold mt-3">건강용품/식품</h1>
-		        		<a href="#" class="font-weight-bold mt-2">전체보기</a>
+		        		<a href="/post/health_products" class="font-weight-bold mt-2">전체보기</a>
 	        		</div>
 	        		
 	        		<div class="d-flex justify-content-between align-items-center flex-wrap">
@@ -80,7 +80,7 @@
 	        		<!-- 식단 레시피 -->
 	        		<div class="d-flex justify-content-between align-items-center">
 		        		<h1 class="font-weight-bold mt-3">식단 레시피</h1>
-		        		<a href="#" class="font-weight-bold mt-2">전체보기</a>
+		        		<a href="/post/recipe" class="font-weight-bold mt-2">전체보기</a>
 	        		</div>
 	        		
 	        		<div class="d-flex justify-content-between align-items-center flex-wrap">
@@ -136,7 +136,7 @@
 			       	<!-- 건강 공유 게시판 -->
 			       	<div class="d-flex justify-content-between align-items-center">
 				       	<h3 class="mt-3 font-weight-bold">건강 공유 게시판</h3>
-		        		<a href="#" class="font-weight-bold mt-2 mr-3">전체보기</a>
+		        		<a href="/post/list_view" class="font-weight-bold mt-2 mr-3">전체보기</a>
 	        		</div>
 			       	<ul class="mt-3">
 			       		<li>1</li>
