@@ -15,6 +15,57 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-	
+	<div id="wrap">
+		<c:import url="/WEB-INF/jsp/include/header.jsp" />
+		
+		<div class="d-flex justify-content-between align-items-center">
+			<h1 class="font-weight-bold mt-2">나의 기록실</h1>
+			<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
+		</div>
+
+		<div class="text-right w-75 mt-3">
+			<a href="#" class="btn btn-primary">자세히 보기</a>
+		</div>
+		
+		<div class="text-center">
+			<div class="mt-3">
+				<h2>yyyy-mm-dd</h2>
+				<div><a href="#">진단기록1</a></div>
+				<div><a href="#">진단기록2</a></div>
+			</div>
+			<div class="mt-3">
+				<h2>yyyy-mm-dd</h2>
+				<div><a href="#">진단기록1</a></div>
+				<div><a href="#">진단기록2</a></div>
+			</div>
+			<div class="mt-3">
+				<h2>yyyy-mm-dd</h2>
+				<div><a href="#">진단기록1</a></div>
+				<div><a href="#">진단기록2</a></div>
+			</div>
+			<div class="mt-3">
+				<h2>yyyy-mm-dd</h2>
+				<div><a href="#">진단기록1</a></div>
+				<div><a href="#">진단기록2</a></div>
+			</div>
+			<div class="mt-3">
+				<h2>yyyy-mm-dd</h2>
+				<div><a href="#">진단기록1</a></div>
+				<div><a href="#">진단기록2</a></div>
+			</div>
+			<div class="mt-3">
+				<h2>yyyy-mm-dd</h2>
+				<div><a href="#">진단기록1</a></div>
+				<div><a href="#">진단기록2</a></div>
+			</div>
+			<div class="mt-3">
+				<h2>yyyy-mm-dd</h2>
+				<div><a href="#">진단기록1</a></div>
+				<div><a href="#">진단기록2</a></div>
+			</div>
+		</div>
+		<hr>
+		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
+	</div>
 </body>
 </html>
