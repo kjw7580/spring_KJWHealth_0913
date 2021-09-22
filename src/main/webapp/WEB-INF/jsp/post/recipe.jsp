@@ -23,4 +23,19 @@
 			<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
 		</div>
 		
-		
+		<c:forEach var="diet" items="${diet }" varStatus="status">
+			<div class="mt-4">
+				<h2 class="font-weight-bold">식단</h2>
+				<div class="d-flex">
+					<img src="${diet.imagePath }" width="300px" height="300px">
+					<div class="ml-5 mr-5">
+						${diet.recipe }
+					</div>
+				</div>
+			</div>
+		</c:forEach>
+		<hr>
+		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
+	</div>
+</body>
+</html>
