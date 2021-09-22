@@ -36,7 +36,7 @@
 
 				<input type="file" accept="image/*" class="mt-2" id="fileInput" multiple>
 				<div class="d-flex justify-content-between mt-3">
-					<a href="#" class="btn btn-info">목록으로</a>
+					<a href="/admin/main" class="btn btn-info">홈으로</a>
 					<button type="button" class="btn btn-success" id="saveBtn">저장</button>
 				</div>
 			</div>

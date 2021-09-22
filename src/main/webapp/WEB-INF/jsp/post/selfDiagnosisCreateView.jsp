@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KJW Health - 건강용품/식품 저장</title>
+<title>KJW Health - 자가진단 저장</title>
 	
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
@@ -21,18 +21,17 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		<section class="d-flex justify-content-center">
 			<div class="w-75 my-5">
-				<h1 class="text-center">건강용품/식품 입력</h1>
+				<h1 class="text-center">자가진단 입력</h1>
 				
 				<div>
 					<label>minBMI : </label>
 					<input type="text" class="form-control col-11 ml-3" id="minBMIInput">
 					<label>maxBMI : </label>
 					<input type="text" class="form-control col-11 ml-3" id="maxBMIInput">
-					<label>이름 : </label>
-					<input type="text" class="form-control col-11 ml-3" id="nameInput">
+					<label>자가진단 : </label>
+					<input type="text" class="form-control col-11 ml-3" id="contentInput">
 				</div>
 
-				<input type="file" accept="image/*" class="mt-2" id="fileInput" multiple>
 				<div class="d-flex justify-content-between mt-3">
 					<a href="/admin/main" class="btn btn-info">홈으로</a>
 					<button type="button" class="btn btn-success" id="saveBtn">저장</button>
@@ -48,7 +47,7 @@
 			$("#saveBtn").on("click", function() {
 				var minBMI = $("#minBMIInput").val();
 				var maxBMI = $("#maxBMIInput").val();
-				var name = $("#nameInput").val().trim();
+				var content = $("#contentInput").val().trim();
 				
 				if(minBMI == 0 || minBMI == "") {
 					alert("minBMI를 입력하세요.");
@@ -60,26 +59,18 @@
 					return;
 				}
 				
-				if(name == null || name == "") {
-					alert("name을 입력하세요.");
+				if(content == null || content == "") {
+					alert("content를 입력하세요.");
 					return;
 				}
 				
-				var formData = new FormData();
-				formData.append("minBMI", minBMI);
-				formData.append("maxBMI", maxBMI);
-				formData.append("name", name);
-				formData.append("file", $("#fileInput")[0].files[0]);
-				
 				$.ajax({
-					enctype:"multipart/form-data",	// 파일 업로드 필수
 					type:"post",
-					url:"/post/health_products/create",
-					processData:false,	// 파일 업로드 필수
-					contentType:false,	// 파일 업로드 필수
-					data:formData,
+					url:"/post/self_diagnosis/create",
+					data:{"minBMI":minBMI, "maxBMI":maxBMI, "content":content},
 					success:function(data) {
 						if(data.result == "success") {
+							location.reload();
 							alert("저장 성공");
 						} else {
 							alert("저장을 실패했습니다!");

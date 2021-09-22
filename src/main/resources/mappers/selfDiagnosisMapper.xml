@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.kimjinwoo.kjwhealth.selfDiagnosis.dao.SelfDiagnosisDAO">
+ 	<insert id="insertSelfDiagnosis" parameterType="map">
+ 		INSERT INTO
+ 			`selfdiagnosis`
+ 		(
+ 			`minBMI`
+ 			, `maxBMI`
+ 			, `content`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		) VALUES (
+ 			#{minBMI}
+ 			, #{maxBMI}
+ 			, #{content}
+ 			, now()
+ 			, now()
+ 		)
+ 		
+ 	</insert>
+ 	
+ 	<select id="selectSelfDiagnosis" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.selfDiagnosis.model.SelfDiagnosis">
+ 		SELECT
+ 			`id`
+ 			,`minBMI`
+ 			, `maxBMI`
+ 			, `content`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`selfdiagnosis`
+
+ 	</select>
+ </mapper>
