@@ -15,6 +15,85 @@
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-	게시글 상세 페이지
+	<div id="wrap">
+		<c:import url="/WEB-INF/jsp/include/header.jsp" />
+		
+		<div class="d-flex justify-content-between align-items-center">
+			<h1 class="font-weight-bold mt-2">게시글 상세 페이지</h1>
+			<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
+		</div>
+		
+		<section class="d-flex justify-content-center">
+			<div class="w-75 mt-5">
+				
+				<!-- 제목, 내용, 파일 업로드 -->
+				<div class="d-flex align-items-center">
+					<label>제목 : </label>
+					<input type="text" class="form-control col-11 ml-3" id="titleInput" value="${post.subject }">
+				</div>
+				
+				<textarea class="form-control mt-3" rows="5" id="contentInput">${post.content }</textarea>
+				
+				<c:if test="${not empty post.imagePath }">
+					<img class="mt-3" src="${post.imagePath }">
+				</c:if>
+				
+				<div class="d-flex justify-content-between mt-3">
+					<div>
+						<a href="/post/list_view" class="btn btn-info">목록으로</a>
+						<button type="button" class="btn btn-danger" id="deleteBtn" data-post-id="${post.id}">삭제</button>
+					</div>
+					<button type="button" class="btn btn-success" id="updateBtn" data-post-id="${post.id}">수정</button>
+				</div>
+			</div>
+		</section>
+		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
+	</div>
+	
+	<script>
+		$(document).ready(function() {
+			
+			$("#updateBtn").on("click", function() {
+				var postId = $(this).data("post-id");
+				$.ajax({
+					type:"post",
+					url:"/post/update",
+					data:{"id":postId, "subject":$("#titleInput").val(), "content":$("#contentInput").val()},
+					success:function(data) {
+						
+						if(data.result == "success") {
+							alert("수정 성공");
+							location.reload();
+						} else {
+							alert("수정 실패");
+						}
+					},
+					error:function(e) {
+						alert("error");
+					}
+				});
+			});
+			
+			$("#deleteBtn").on("click", function() {
+				var postId = $(this).data("post-id");
+				
+				$.ajax({
+					type:"get",
+					url:"/post/delete",
+					data:{"id":postId},
+					success:function(data) {
+						if(data.result == "success") {
+							location.href="/post/list_view"
+						} else {
+							alert("삭제 실패");
+						}
+					},
+					error:function(e) {
+						alert("error");
+					}
+				});
+			});
+		});
+	</script>
 </body>
 </html>

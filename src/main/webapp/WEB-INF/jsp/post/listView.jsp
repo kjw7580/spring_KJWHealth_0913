@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,61 +32,47 @@
 				</div>
 			</div>
 		</div>
-		
-		<table class="table text-center mt-3">
-			<thead>
-				<tr>
-					<th>No.</th>
-					<th>게시물</th>
-					<th>작성자</th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td>1</td>
-					<td>게시글1</td>
-					<td>김진우</td>
-				<tr>
-				<tr>
-					<td>2</td>
-					<td>게시글2</td>
-					<td>김진우</td>
-				<tr>
-				<tr>
-					<td>3</td>
-					<td>게시글3</td>
-					<td>김진우</td>
-				<tr>
-				<tr>
-					<td>4</td>
-					<td>게시글4</td>
-					<td>김진우</td>
-				<tr>
-				<tr>
-					<td>5</td>
-					<td>게시글5</td>
-					<td>김진우</td>
-				<tr>
-				<tr>
-					<td>6</td>
-					<td>게시글6</td>
-					<td>김진우</td>
-				<tr>
-				<tr>
-					<td>7</td>
-					<td>게시글7</td>
-					<td>김진우</td>
-				<tr>
-				<tr>
-					<td>8</td>
-					<td>게시글8</td>
-					<td>김진우</td>
-				<tr>
-			</tbody>
-		</table>
-		<div class="text-right">
-			<a href="/post/create_view" class="btn btn-primary mt-3">게시물 작성</a>
-		</div>
+
+		<section class="d-flex justify-content-center">
+			<div class="w-75 mt-3">
+				<table class="table text-center">
+					<thead>
+						<tr>
+							<th>No.</th>
+							<th>제목</th>
+							<th>시간</th>
+						</tr>
+					</thead>
+					<tbody>
+						<c:forEach var="health" items="${healthList }" varStatus="status">
+							<tr>
+								<td>${health.id }</td>
+								<td><a href="/post/detail_view?id=${health.id }"> ${health.subject } </a></td>
+								<td><fmt:formatDate value="${health.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
+							</tr>
+						</c:forEach>
+					</tbody>
+				</table>
+				
+				<div class="d-flex justify-content-between">
+					<div>
+						<c:if test="${prevId ne 0 }">
+							<a href="/post/list_view?prevId=${prevId }">&lt;이전</a>
+						</c:if>
+					</div>
+				
+					<div class="text-right">
+						<c:if test="${nextId ne 0 }">
+							<a href="/post/list_view?nextId=${nextId }">다음></a>
+						</c:if>
+					</div>
+				</div>
+				
+				<div class="text-right">
+					<a href="/post/create_view" class="btn btn-primary mt-2">글쓰기</a>
+				</div>
+			</div>
+		</section>
 		<hr>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>

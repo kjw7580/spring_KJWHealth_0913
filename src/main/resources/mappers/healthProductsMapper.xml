@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.kimjinwoo.kjwhealth.healthProducts.dao.HealthProductsDAO">
+ 	<insert id="insertHealthProducts" parameterType="map">
+ 		INSERT INTO
+ 			`healthproducts`
+ 		(
+ 			`minBMI`
+ 			, `maxBMI`
+ 			, `name`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		) VALUES (
+ 			#{minBMI}
+ 			, #{maxBMI}
+ 			, #{name}
+ 			, #{imagePath}
+ 			, now()
+ 			, now()
+ 		)
+ 		
+ 	</insert>
+ 	
+ 	<select id="selectHealthProducts" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.healthProducts.model.HealthProducts">
+ 		SELECT
+ 			`id`
+ 			,`minBMI`
+ 			, `maxBMI`
+ 			, `name`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`healthproducts`
+ 		ORDER BY `id` DESC LIMIT 9
+ 	</select>
+ </mapper>

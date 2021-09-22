@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.kimjinwoo.kjwhealth.diet.dao.DietDAO">
+ 	<insert id="insertDiet" parameterType="map">
+ 		INSERT INTO
+ 			`diet`
+ 		(
+ 			`minBMI`
+ 			, `maxBMI`
+ 			, `name`
+ 			, `imagePath`
+ 			, `recipe`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		) VALUES (
+ 			#{minBMI}
+ 			, #{maxBMI}
+ 			, #{name}
+ 			, #{imagePath}
+ 			, #{recipe}
+ 			, now()
+ 			, now()
+ 		)
+ 		
+ 	</insert>
+ 	
+ 	<select id="selectDiet" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.diet.model.Diet">
+ 		SELECT
+ 			`id`
+ 			,`minBMI`
+ 			, `maxBMI`
+ 			, `name`
+ 			, `imagePath`
+ 			, `recipe`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`diet`
+ 		ORDER BY `id` DESC LIMIT 3
+ 	</select>
+ </mapper>

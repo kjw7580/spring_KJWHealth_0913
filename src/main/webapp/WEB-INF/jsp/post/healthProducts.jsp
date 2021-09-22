@@ -40,47 +40,15 @@
 				
 				<div class="col-10 bg-light mt-4">
 					<div class="d-flex justify-content-between align-items-center flex-wrap">
-						<div>
-							<img src="https://cdn.pixabay.com/photo/2012/04/10/17/40/vitamins-26622__340.png" width="250px" height="250px">
-							<h2>식품/용품1</h2>
-						</div>
-						<div>
-							<img src="https://cdn.pixabay.com/photo/2012/04/10/17/40/vitamins-26622__340.png" width="250px" height="250px">
-							<h2>식품/용품2</h2>
-						</div>
-						<div>
-							<img src="https://cdn.pixabay.com/photo/2012/04/10/17/40/vitamins-26622__340.png" width="250px" height="250px">
-							<h2>식품/용품3</h2>
-						</div>
-						<div class="mt-5">
-							<img src="https://cdn.pixabay.com/photo/2012/04/10/17/40/vitamins-26622__340.png" width="250px" height="250px">
-							<h2>식품/용품4</h2>
-						</div>
-						<div class="mt-5">
-							<img src="https://cdn.pixabay.com/photo/2012/04/10/17/40/vitamins-26622__340.png" width="250px" height="250px">
-							<h2>식품/용품5</h2>
-						</div>
-						<div class="mt-5">
-							<img src="https://cdn.pixabay.com/photo/2012/04/10/17/40/vitamins-26622__340.png" width="250px" height="250px">
-							<h2>식품/용품6</h2>
-						</div>
-						<div class="mt-5">
-							<img src="https://cdn.pixabay.com/photo/2012/04/10/17/40/vitamins-26622__340.png" width="250px" height="250px">
-							<h2>식품/용품7</h2>
-						</div>
-						<div class="mt-5">
-							<img src="https://cdn.pixabay.com/photo/2012/04/10/17/40/vitamins-26622__340.png" width="250px" height="250px">
-							<h2>식품/용품8</h2>
-						</div>
-						<div class="mt-5">
-							<img src="https://cdn.pixabay.com/photo/2012/04/10/17/40/vitamins-26622__340.png" width="250px" height="250px">
-							<h2>식품/용품9</h2>
-						</div>
+						<c:forEach var="product" items="${healthProducts }" varStatus="status">
+							<div class="mt-3">
+								<img src="${product.imagePath }" width="250px" height="250px">
+								<h2>${product.name }</h2>
+							</div>
+						</c:forEach>
 					</div>
 				</div>
-				
-			</div>
-			
+			</div>	
 			<div class="text-right">
 				<a href="#" class="btn btn-primary mt-3">물품 등록하기</a>
 			</div>
