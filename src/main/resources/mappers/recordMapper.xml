@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.kimjinwoo.kjwhealth.record.dao.RecordDAO">
+ 	<insert id="insertRecord" parameterType="map">
+ 		INSERT INTO
+ 			`record`
+ 		(
+ 			`userId`
+ 			, `diagnosisResultCreatedAt`
+ 			, `selfDiagnosisContent`
+			, `createdAt`
+			, `updatedAt`
+ 		) VALUES (
+ 			#{userId}
+ 			, now()
+ 			, 'test'
+ 			, now()
+ 			, now()
+ 		)
+ 		
+ 	</insert>
+ 	
+ 	<select id="selectRecord" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.record.model.Record">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `diagnosisResultCreatedAt`
+ 			, `selfDiagnosisContent`
+			, `createdAt`
+			, `updatedAt`
+ 		FROM
+ 			`record`
+ 	</select>
+ </mapper>

@@ -19,6 +19,30 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
 		<!-- Search Bar -->
+		<nav class="navbar navbar-dark bg-primary mt-3">
+			<a class="navbar-brand" href="#">Home</a>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a class="nav-item nav-link active" href="#">진단하기 <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link" href="#">건강용품/식품</a>
+					<a class="nav-item nav-link" href="#">건강 정보 공유</a>
+					<a class="nav-item nav-link" href="#">나의 건강 기록</a>
+				</div>
+			</div>
+		</nav>
+		
+		<nav class="navbar navbar-light justify-content-between">
+			<div></div>
+			<form class="form-inline">
+				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+				<button class="btn btn-outline-success my-2 my-sm-0" type="submit">검색</button>
+			</form>
+		</nav>
+		
+		<!-- 
 		<div class="d-flex mt-2">
 			<h1 class="text-info font-weight-bold">KJW Health</h1>
 			<div class="input-group mb-3 w-50 mt-2 ml-5">
@@ -29,8 +53,32 @@
 			</div>
 			<h2 class="ml-5 mt-2">2021-09-14</h2>
 		</div>
-		
+		 -->
+		 
 		<!-- 메뉴리스트 -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+			<button class="navbar-toggler" type="button" data-toggle="collapse">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNav">
+				<ul class="navbar-nav">
+					<li class="nav-item navbar-brand active">
+						<a class="nav-link font-weight-bold" href="/post/diagnosis">진단하기</a>
+					</li>
+					<li class="nav-item navbar-brand active">
+						<a class="nav-link font-weight-bold" href="/post/health_products">건강용품/식품</a>
+					</li>
+					<li class="nav-item navbar-brand active">
+						<a class="nav-link font-weight-bold" href="/post/list_view">건강 정보 공유</a>
+					</li>
+					<li class="nav-item navbar-brand active">
+						<a class="nav-link font-weight-bold" href="/post/record">나의 건강 기록</a>
+					</li>
+				</ul>
+			</div>
+		</nav>
+
+		<!-- 
 		<nav class="mt-2">
 	        <ul class="nav nav-fill">
 	            <li class="nav-item"><a class="nav-link" href="/post/diagnosis">진단하기</a></li>
@@ -39,75 +87,68 @@
 	            <li class="nav-item"><a class="nav-link" href="/post/record">나의 건강 기록</a></li>
 	        </ul>
         </nav>
-        
+         -->
+         
         <section>
         	<div class="d-flex">
 	        	<div class="col-8">
 	        	
 	        		<!-- 건강용품/식품 -->
 	        		<div class="d-flex justify-content-between align-items-center">
-		        		<h1 class="font-weight-bold mt-3">건강용품/식품</h1>
-		        		<a href="/post/health_products" class="font-weight-bold mt-2">전체보기</a>
+	        			<nav class="navbar navbar-light mt-3">
+							<a class="navbar-brand" href="#">
+								<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
+							</a>
+							<h1 class="font-weight-bold">건강용품/식품</h1>
+						</nav>
+		        		<a href="/post/health_products" class="font-weight-bold mt-3">전체보기</a>
 	        		</div>
 	        		
 	        		<div class="d-flex justify-content-between align-items-center flex-wrap">
-		        		<div>
-		        			<img src="https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478__340.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">건강용품/식품 : 이름</h5>
-		        		</div>
-		        		<div>
-		        			<img src="https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478__340.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">건강용품/식품 : 이름</h5>
-		        		</div>
-		        		<div>
-		        			<img src="https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478__340.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">건강용품/식품 : 이름</h5>
-		        		</div>
-		        		<div class="mt-3">
-		        			<img src="https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478__340.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">건강용품/식품 : 이름</h5>
-		        		</div>
-		        		<div class="mt-3">
-		        			<img src="https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478__340.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">건강용품/식품 : 이름</h5>
-		        		</div>
-		        		<div class="mt-3">
-		        			<img src="https://cdn.pixabay.com/photo/2017/07/02/19/24/dumbbells-2465478__340.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">건강용품/식품 : 이름</h5>
-		        		</div>
+	        			<c:forEach var="product" items="${healthProducts }" varStatus="status">
+							<div class="card mt-2" style="width: 250px;">
+							<img class="card-img-top" src="${product.imagePath }" alt="Card image cap">
+								<div class="card-body">
+									<h2>${product.name }</h2>
+								</div>
+							</div>
+
+	        				<!-- 
+	        				<div>
+			        			<img src="${product.imagePath }" width="200px">
+			        			<h5 class="mt-1 font-weight-bold">${product.name }</h5>
+			        		</div>
+			        		 -->
+	        			</c:forEach>
 	        		</div>
 	        		
 	        		<!-- 식단 레시피 -->
 	        		<div class="d-flex justify-content-between align-items-center">
-		        		<h1 class="font-weight-bold mt-3">식단 레시피</h1>
-		        		<a href="/post/recipe" class="font-weight-bold mt-2">전체보기</a>
+		        		<nav class="navbar navbar-light mt-3">
+							<a class="navbar-brand" href="#">
+								<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
+							</a>
+							<h1 class="font-weight-bold">식단 레시피</h1>
+						</nav>
+		        		<a href="/post/recipe" class="font-weight-bold mt-3">전체보기</a>
 	        		</div>
 	        		
 	        		<div class="d-flex justify-content-between align-items-center flex-wrap">
-		        		<div>
-		        			<img src="https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466__480.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">식단 레시피 : 이름</h5>
-		        		</div>
-		        		<div>
-		        			<img src="https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466__480.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">식단 레시피 : 이름</h5>
-		        		</div>
-		        		<div>
-		        			<img src="https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466__480.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">식단 레시피 : 이름</h5>
-		        		</div>
-		        		<div class="mt-3">
-		        			<img src="https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466__480.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">식단 레시피 : 이름</h5>
-		        		</div>
-		        		<div class="mt-3">
-		        			<img src="https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466__480.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">식단 레시피 : 이름</h5>
-		        		</div>
-		        		<div class="mt-3">
-		        			<img src="https://cdn.pixabay.com/photo/2016/12/26/17/28/spaghetti-1932466__480.jpg" width="200px">
-		        			<h5 class="mt-1 font-weight-bold">식단 레시피 : 이름</h5>
-		        		</div>
+		        		<c:forEach var="diet" items="${diet }" varStatus="status">
+		        			<div class="card mt-2" style="width: 250px;">
+							<img class="card-img-top" src="${diet.imagePath }" alt="Card image cap">
+								<div class="card-body">
+									<h2>${diet.name }</h2>
+								</div>
+							</div>
+							
+							<!-- 
+	        				<div>
+			        			<img src="${diet.imagePath }" width="200px">
+			        			<h5 class="mt-1 font-weight-bold">${diet.name }</h5>
+			        		</div>
+			        		 -->
+	        			</c:forEach>
 	        		</div>
 	        	</div>
 	        	
@@ -135,27 +176,40 @@
 			       	
 			       	<!-- 건강 공유 게시판 -->
 			       	<div class="d-flex justify-content-between align-items-center">
-				       	<h3 class="mt-3 font-weight-bold">건강 공유 게시판</h3>
-		        		<a href="/post/list_view" class="font-weight-bold mt-2 mr-3">전체보기</a>
+				       	<nav class="navbar navbar-light mt-3">
+							<a class="navbar-brand" href="#">
+								<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
+							</a>
+							<h2 class="font-weight-bold">건강 공유 게시판</h2>
+						</nav>
 	        		</div>
+	        		<div class="text-right">
+		        		<a href="/post/list_view" class="font-weight-bold mt-2 mr-3">전체보기</a>
+		        	</div>
+		        	<div class="list-group mt-3">
+						<c:forEach var="mainHealth" items="${mainHealthList }" varStatus="status">
+	        				<a href="#" class="list-group-item list-group-item-action text-primary">${mainHealth.subject }</a>
+	        			</c:forEach>
+					</div>
+		        	<!-- 
 			       	<ul class="mt-3">
-			       		<li>1</li>
-			       		<li>2</li>
-			       		<li>3</li>
-			       		<li>4</li>
-			       		<li>5</li>
-			       		<li>6</li>
-			       		<li>7</li>
-			       		<li>8</li>
-			       		<li>9</li>
-			       		<li>10</li>
+			       		<c:forEach var="mainHealth" items="${mainHealthList }" varStatus="status">
+	        				<li><a href="#">${mainHealth.subject }</a></li>
+	        			</c:forEach>
 			       	</ul>
-			       	
+			       	 -->
 			       	<!-- 건강 뉴스 -->
 			       	<div class="d-flex justify-content-between align-items-center">
-			       		<h3 class="mt-3 font-weight-bold">건강 뉴스</h3>
-		        		<a href="#" class="font-weight-bold mt-2 mr-3">보러가기</a>
+			       		<nav class="navbar navbar-light mt-3">
+							<a class="navbar-brand" href="#">
+								<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
+							</a>
+							<h2 class="font-weight-bold">건강 뉴스</h2>
+						</nav>
 	        		</div>
+					<div class="text-right mb-3">
+		        		<a href="#" class="font-weight-bold mt-2 mr-3">전체보기</a>
+		        	</div>
 			       	<div><img src="https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376__340.jpg" width="350px" height="300px"></div>
 	        	</div>
         	</div>

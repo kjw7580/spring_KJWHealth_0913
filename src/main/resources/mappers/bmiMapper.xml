@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.kimjinwoo.kjwhealth.BMI.dao.BMIDAO">
+ 	<insert id="insertBMI" parameterType="map">
+ 		INSERT INTO
+ 			`bmi`
+ 		(
+ 			`userId`
+ 			, `age`
+ 			, `height`
+ 			, `weight`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		) VALUES (
+ 			#{userId}
+ 			, #{age}
+ 			, #{height}
+ 			, #{weight}
+ 			, now()
+ 			, now()
+ 		)
+ 		
+ 	</insert>
+ 	
+ 	<select id="selectBMI" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.BMI.model.BMI">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `age`
+ 			, `height`
+ 			, `weight`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`bmi`
+ 		ORDER BY `id` DESC LIMIT 1
+ 	</select>
+ </mapper>

@@ -43,6 +43,22 @@
  		LIMIT 10
  	</select>
  	
+ 	<select id="selectMainHealthList" parameterType="int" 
+ 	resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `subject`
+ 			, `content`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`post`
+ 		ORDER BY `id` DESC
+ 		LIMIT 10
+ 	</select>
+ 	
  	<select id="selectHealthListByNextId" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
  		SELECT
  			`id`

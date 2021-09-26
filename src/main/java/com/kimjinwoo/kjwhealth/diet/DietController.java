@@ -25,7 +25,7 @@ public class DietController {
 
 	@GetMapping("/recipe")
 	public String recipeView(Model model) {
-		
+
 		List<Diet> diet = dietBO.getDiet();
 		
 		model.addAttribute("diet", diet);

@@ -19,23 +19,46 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
 		<div class="d-flex justify-content-between align-items-center">
-			<h1 class="font-weight-bold mt-2">식단 레시피</h1>
+			<nav class="navbar navbar-light mt-3">
+				<a class="navbar-brand" href="#">
+					<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
+				</a>
+				<h1 class="font-weight-bold">식단 레시피</h1>
+			</nav>
 			<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
 		</div>
 		
+		<div class="d-flex">
+			<nav class="navbar navbar-light mt-3">
+				<a class="navbar-brand" href="#">
+					<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
+				</a>
+				<h2 class="font-weight-bold mt-2">식단</h2>
+			</nav>
+		</div>
+		
 		<c:forEach var="diet" items="${diet }" varStatus="status">
-			<div class="mt-4">
-				<h2 class="font-weight-bold">식단</h2>
+			<div class="mt-5">
+				<div class="card bg-dark text-dark">
+					<img class="card-img" src="${diet.imagePath }" alt="Card image" height="500px">
+					<div class="card-img-overlay">
+						<h5 class="card-title">${diet.name }</h5>
+						<p class="card-text">${diet.recipe }</p>
+					</div>
+				</div>
+				<!-- 
 				<div class="d-flex">
 					<img src="${diet.imagePath }" width="300px" height="300px">
 					<div class="ml-5 mr-5">
 						${diet.recipe }
 					</div>
 				</div>
+				 -->
 			</div>
 		</c:forEach>
 		<hr>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>
+	
 </body>
 </html>

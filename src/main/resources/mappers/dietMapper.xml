@@ -40,6 +40,6 @@
  			, `updatedAt`
  		FROM
  			`diet`
- 		ORDER BY `id` DESC LIMIT 3
+ 		ORDER BY `id` DESC LIMIT 6
  	</select>
  </mapper>

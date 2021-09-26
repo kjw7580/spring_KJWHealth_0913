@@ -37,6 +37,6 @@
  			, `updatedAt`
  		FROM
  			`healthproducts`
- 		ORDER BY `id` DESC LIMIT 9
+ 		ORDER BY `id` DESC LIMIT 6
  	</select>
  </mapper>

@@ -52,6 +52,11 @@ header {
 	height:210px;
 }
 
+.bmi-emptyBox {
+	border:solid 1px black;
+	height:210px;
+}
+
 footer {
 	height:50px;
 }

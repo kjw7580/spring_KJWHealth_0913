@@ -5,7 +5,12 @@
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 </head>
 <header class="d-flex align-items-center justify-content-between">
-	<h2 class="ml-3">KJW Health</h2>
+	<nav class="navbar navbar-light">
+		<a class="navbar-brand" href="#">
+			<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="40" height="40" class="d-inline-block align-top" alt="">
+		</a>
+		<h1 class="font-weight-bold text-primary">KJW Health</h1>
+	</nav>
 	
 	<c:choose>
 		<c:when test="${userId eq 2 }">

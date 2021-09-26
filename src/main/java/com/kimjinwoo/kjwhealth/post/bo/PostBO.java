@@ -48,6 +48,10 @@ public class PostBO {
 		return postDAO.selectHealthList(userId);
 	}
 	
+	public List<Post> getMainHealthList() {
+		return postDAO.selectMainHealthList();
+	}
+	
 	public boolean isLastPage(int userId, int nextId) {
 		return postDAO.lastPost(userId).getId() == nextId;
 	}

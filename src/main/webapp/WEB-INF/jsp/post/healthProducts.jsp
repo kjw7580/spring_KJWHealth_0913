@@ -26,24 +26,27 @@
 		<section>
 			<div class="d-flex">
 				<div class="col-2">
-					<h4 class="font-weight-bold mt-3">Category</h4>
-					<ul class="mt-3">
-						<li>카테고리1</li>
-						<li>카테고리2</li>
-						<li>카테고리3</li>
-						<li>카테고리4</li>
-						<li>카테고리5</li>
-						<li>카테고리6</li>
-						<li>카테고리7</li>
+					<ul class="list-group">
+						<li class="list-group-item font-weight-bold">Category</li>
+						<li class="list-group-item list-group-item-primary">list group item</li>
+						<li class="list-group-item list-group-item-secondary">list group item</li>
+						<li class="list-group-item list-group-item-success">list group item</li>
+						<li class="list-group-item list-group-item-danger">list group item</li>
+						<li class="list-group-item list-group-item-warning">list group item</li>
+						<li class="list-group-item list-group-item-info">list group item</li>
+						<li class="list-group-item list-group-item-light">list group item</li>
+						<li class="list-group-item list-group-item-dark">list group item</li>
 					</ul>
 				</div>
 				
 				<div class="col-10 bg-light mt-4">
 					<div class="d-flex justify-content-between align-items-center flex-wrap">
 						<c:forEach var="product" items="${healthProducts }" varStatus="status">
-							<div class="mt-3">
-								<img src="${product.imagePath }" width="250px" height="250px">
-								<h2>${product.name }</h2>
+							<div class="card mt-2" style="width: 250px;">
+							<img class="card-img-top" src="${product.imagePath }" alt="Card image cap">
+								<div class="card-body">
+									<h2>${product.name }</h2>
+								</div>
 							</div>
 						</c:forEach>
 					</div>

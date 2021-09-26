@@ -28,41 +28,14 @@
 		</div>
 		
 		<div class="text-center">
-			<div class="mt-3">
-				<h2>yyyy-mm-dd</h2>
-				<div><a href="#">진단기록1</a></div>
-				<div><a href="#">진단기록2</a></div>
-			</div>
-			<div class="mt-3">
-				<h2>yyyy-mm-dd</h2>
-				<div><a href="#">진단기록1</a></div>
-				<div><a href="#">진단기록2</a></div>
-			</div>
-			<div class="mt-3">
-				<h2>yyyy-mm-dd</h2>
-				<div><a href="#">진단기록1</a></div>
-				<div><a href="#">진단기록2</a></div>
-			</div>
-			<div class="mt-3">
-				<h2>yyyy-mm-dd</h2>
-				<div><a href="#">진단기록1</a></div>
-				<div><a href="#">진단기록2</a></div>
-			</div>
-			<div class="mt-3">
-				<h2>yyyy-mm-dd</h2>
-				<div><a href="#">진단기록1</a></div>
-				<div><a href="#">진단기록2</a></div>
-			</div>
-			<div class="mt-3">
-				<h2>yyyy-mm-dd</h2>
-				<div><a href="#">진단기록1</a></div>
-				<div><a href="#">진단기록2</a></div>
-			</div>
-			<div class="mt-3">
-				<h2>yyyy-mm-dd</h2>
-				<div><a href="#">진단기록1</a></div>
-				<div><a href="#">진단기록2</a></div>
-			</div>
+			<c:forEach var="record" items="${record }" varStatus="status">
+				<c:forEach var="selfDiagnosis" items="${selfDiagnosis }" varStatus="status">
+					<h2 class="mt-5 font-weight-bold">
+						${record.diagnosisResultCreatedAt }
+					</h2>
+					<h3><a href="#">${selfDiagnosis.content }</a></h3>
+				</c:forEach>
+			</c:forEach>
 		</div>
 		<hr>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />

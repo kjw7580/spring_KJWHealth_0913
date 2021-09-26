@@ -18,6 +18,8 @@ public interface PostDAO {
 	
 	public List<Post> selectHealthList(@Param("userId") int userId);
 	
+	public List<Post> selectMainHealthList();
+	
 	public List<Post> selectHealthListByNextId(
 			@Param("userId") int userId
 			, @Param("nextId") int nextId);
