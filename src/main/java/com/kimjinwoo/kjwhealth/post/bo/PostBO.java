@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.kimjinwoo.kjwhealth.common.FileManagerService;
+import com.kimjinwoo.kjwhealth.post.comment.bo.CommentBO;
 import com.kimjinwoo.kjwhealth.post.dao.PostDAO;
 import com.kimjinwoo.kjwhealth.post.model.Post;
 
@@ -16,6 +17,9 @@ public class PostBO {
 
 	@Autowired
 	private PostDAO postDAO;
+	
+	@Autowired
+	private CommentBO commentBO;
 	
 	public int addPost(int userId, String title, String content, MultipartFile file) {
 		

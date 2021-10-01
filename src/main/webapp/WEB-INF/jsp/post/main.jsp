@@ -97,7 +97,7 @@
 	        		<div class="d-flex justify-content-between align-items-center">
 	        			<nav class="navbar navbar-light mt-3">
 							<a class="navbar-brand" href="#">
-								<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
+								<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
 							</a>
 							<h1 class="font-weight-bold">건강용품/식품</h1>
 						</nav>
@@ -126,7 +126,7 @@
 	        		<div class="d-flex justify-content-between align-items-center">
 		        		<nav class="navbar navbar-light mt-3">
 							<a class="navbar-brand" href="#">
-								<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
+								<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
 							</a>
 							<h1 class="font-weight-bold">식단 레시피</h1>
 						</nav>
@@ -178,7 +178,7 @@
 			       	<div class="d-flex justify-content-between align-items-center">
 				       	<nav class="navbar navbar-light mt-3">
 							<a class="navbar-brand" href="#">
-								<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
+								<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
 							</a>
 							<h2 class="font-weight-bold">건강 공유 게시판</h2>
 						</nav>
@@ -202,7 +202,7 @@
 			       	<div class="d-flex justify-content-between align-items-center">
 			       		<nav class="navbar navbar-light mt-3">
 							<a class="navbar-brand" href="#">
-								<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
+								<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
 							</a>
 							<h2 class="font-weight-bold">건강 뉴스</h2>
 						</nav>

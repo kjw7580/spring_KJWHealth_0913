@@ -24,7 +24,7 @@
 				<div class="d-flex justify-content-between align-items-center">
 					<nav class="navbar navbar-light mt-3">
 						<a class="navbar-brand" href="#">
-							<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
+							<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
 						</a>
 						<h1 class="font-weight-bold" id="nowBMI">진단결과</h1>
 					</nav>
@@ -34,7 +34,7 @@
 				<div class="d-flex justify-content-between align-items-center mt-5">
 					<nav class="navbar navbar-light">
 						<a class="navbar-brand" href="#">
-							<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
+							<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
 						</a>
 						<h2 class="font-weight-bold">AI 자가진단 결과</h2>
 					</nav>
@@ -46,7 +46,7 @@
 					<c:set var="height" value="${bmi.height }" />
 					<fmt:parseNumber var="height" type="number" value="${height }" />
 				</c:forEach>
-				<c:set var="BMI" value="${weight / ((height / 100) * (height/100)) }" />
+				<c:set var="BMI" value="${weight / ((height / 100) * (height / 100)) }" />
 				<fmt:parseNumber var="BMI" type="number" value="${BMI }" />
 
 				<div class="mt-3">
@@ -60,7 +60,7 @@
 				<div class="d-flex mt-3">
 					<nav class="navbar navbar-light">
 						<a class="navbar-brand" href="#">
-							<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
+							<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
 						</a>
 						<h2 class="font-weight-bold">개인별 식단 추천</h2>
 					</nav>
@@ -92,7 +92,7 @@
 				<div class="d-flex mt-3">
 					<nav class="navbar navbar-light">
 						<a class="navbar-brand" href="#">
-							<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
+							<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
 						</a>
 						<h2 class="font-weight-bold">개인별 건강용품/식품 추천</h2>
 					</nav>
@@ -125,5 +125,27 @@
 		<hr>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>
+	
+	<script>
+		$(document).ready(function() {
+			$(".recordBtn").on("click", function() {
+				$.ajax({
+					type:"post",
+					url:"/post/record/create",
+					success:function(data) {
+						if(data.result == "success") {
+							alert("기록 성공");
+						} else {
+							alert("기록을 실패했습니다!");
+						}
+					},
+					error(e) {
+						alert("error");
+					}
+				});
+			});
+				
+		});
+	</script>
 </body>
 </html>

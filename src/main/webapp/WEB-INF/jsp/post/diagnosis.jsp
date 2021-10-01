@@ -74,16 +74,16 @@
 					<fmt:parseNumber var="height" type="number" value="${height }" />
 					<c:choose>
 						<c:when test="${weight / ((height / 100) * (height/100)) < 18.5 }">
-							<h1 class="text-primary text-right mt-3" id="underWeight">${weight / ((height / 100) * (height/100)) }<br> 저체중입니다.</h1>
+							<h1 class="text-primary text-right mt-3" id="underWeight">${weight / ((height / 100) * (height / 100)) }<br> 저체중입니다.</h1>
 						</c:when>
 						<c:when test="${weight / ((height / 100) * (height/100)) < 23 }">
-							<h1 class="text-success text-right mt-3" id="normalWeight">${weight / ((height / 100) * (height/100)) }<br> 정상입니다.</h1>
+							<h1 class="text-success text-right mt-3" id="normalWeight">${weight / ((height / 100) * (height / 100)) }<br> 정상입니다.</h1>
 						</c:when>
 						<c:when test="${weight / ((height / 100) * (height/100)) < 25 }">
-							<h1 class="text-warning text-right mt-3" id="overWeight">${weight / ((height / 100) * (height/100)) }<br> 과체중입니다.</h1>
+							<h1 class="text-warning text-right mt-3" id="overWeight">${weight / ((height / 100) * (height / 100)) }<br> 과체중입니다.</h1>
 						</c:when>
 						<c:when test="${weight / ((height / 100) * (height/100)) > 25 }">
-							<h1 class="text-danger text-right mt-3" id="obesityWeight">${weight / ((height / 100) * (height/100)) }<br> 비만입니다.</h1>
+							<h1 class="text-danger text-right mt-3" id="obesityWeight">${weight / ((height / 100) * (height / 100)) }<br> 비만입니다.</h1>
 						</c:when>
 					</c:choose>
 				</c:forEach>
@@ -132,7 +132,7 @@
 										<h3 class="font-weight-bold mt-3">AI 자가진단 결과</h3>
 										<button type="button" class="btn btn-primary recordBtn">기록하기</button>
 									</div>
-									<c:set var="BMI" value="${weight / ((height / 100) * (height/100)) }" />
+									<c:set var="BMI" value="${weight / ((height / 100) * (height / 100)) }" />
 									<fmt:parseNumber var="BMI" type="number" value="${BMI }" />
 									<c:if test="${BMI < 100 }">
 										<div class="mt-3">
@@ -192,7 +192,7 @@
 				var age = $("#ageInput").val();
 				var height = $("#heightInput").val();
 				var weight = $("#weightInput").val();
-//				var BMI = ${weight / ((height / 100) * (height/100)) };
+//				var BMI = ${weight / ((height / 100) * (height / 100)) };
 				
 				if(age == 0 || age == "") {
 					alert("age를 입력하세요.");
@@ -259,22 +259,6 @@
 				
 			});
 			
-			$(".recordBtn").on("click", function() {
-				$.ajax({
-					type:"post",
-					url:"/post/record/create",
-					success:function(data) {
-						if(data.result == "success") {
-							alert("기록 성공");
-						} else {
-							alert("기록을 실패했습니다!");
-						}
-					},
-					error(e) {
-						alert("error");
-					}
-				});
-			});
 			
 			$("#recipeBtn").on("click", function() {
 				var BMIValue = $("#BMIResult").val();
@@ -285,7 +269,7 @@
 				var age = $("#ageInput").val();
 				var height = $("#heightInput").val();
 				var weight = $("#weightInput").val();
-				var BMI = ${weight / ((height / 100) * (height/100)) };
+				var BMI = ${weight / ((height / 100) * (height / 100)) };
 				document.getElementById("nowBMI").innerHTML=BMI;
 			});
 			*/

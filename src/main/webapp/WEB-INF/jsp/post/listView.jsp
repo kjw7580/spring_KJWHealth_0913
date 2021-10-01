@@ -35,8 +35,8 @@
 
 		<section class="d-flex justify-content-center">
 			<div class="w-75 mt-3">
-				<table class="table text-center">
-					<thead>
+				<table class="table text-center table-striped">
+					<thead class="thead-dark">
 						<tr>
 							<th>No.</th>
 							<th>제목</th>

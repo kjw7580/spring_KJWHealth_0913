@@ -7,7 +7,7 @@
 <header class="d-flex align-items-center justify-content-between">
 	<nav class="navbar navbar-light">
 		<a class="navbar-brand" href="#">
-			<img src="https://cdn.pixabay.com/photo/2020/09/13/19/09/letter-k-5569121_960_720.png" width="40" height="40" class="d-inline-block align-top" alt="">
+			<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="40" height="40" class="d-inline-block align-top" alt="">
 		</a>
 		<h1 class="font-weight-bold text-primary">KJW Health</h1>
 	</nav>

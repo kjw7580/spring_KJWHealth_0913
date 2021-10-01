@@ -26,7 +26,7 @@
 		<section>
 			<div class="d-flex">
 				<div class="col-2">
-					<ul class="list-group">
+					<ul class="list-group mt-4">
 						<li class="list-group-item font-weight-bold">Category</li>
 						<li class="list-group-item list-group-item-primary">list group item</li>
 						<li class="list-group-item list-group-item-secondary">list group item</li>

@@ -24,15 +24,28 @@
 		</div>
 		
 		<section class="d-flex justify-content-center">
-			<div class="w-75 mt-5">
+			<div class="create-box w-75 mt-5">
+
+				<div class="input-group mb-3 mt-5">
+					<div class="input-group-prepend">
+						<span class="input-group-text">제목</span>
+					</div>
+					<input type="text" class="form-control" placeholder="제목을 입력하세요." id="titleInput">
+				</div>
 				
-				<!-- 제목, 내용, 파일 업로드 -->
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">내용</span>
+					</div>
+					<textarea class="form-control" rows="10" placeholder="내용을 입력하세요." id="contentInput"></textarea>
+				</div>
+				<!-- 제목, 내용, 파일 업로드
 				<div class="d-flex align-items-center">
 					<label>제목 : </label>
 					<input type="text" class="form-control col-11 ml-3" id="titleInput">
 				</div>
-				
 				<textarea class="form-control mt-3" rows="5" id="contentInput"></textarea>
+				 -->
 				<!-- MIME -->
 				<input type="file" accept="image/*" class="mt-2" id="fileInput" multiple>
 				<div class="d-flex justify-content-between mt-3">

@@ -24,21 +24,33 @@
 		</div>
 		
 		<section class="d-flex justify-content-center">
-			<div class="w-75 mt-5">
+			<div class="detail-box w-75 mt-5">
+				<div class="input-group mb-3 mt-5">
+					<div class="input-group-prepend">
+						<span class="input-group-text">제목</span>
+					</div>
+					<input type="text" class="form-control" placeholder="제목을 입력하세요." id="titleInput" value="${post.subject }">
+				</div>
 				
-				<!-- 제목, 내용, 파일 업로드 -->
+				<div class="input-group">
+					<div class="input-group-prepend">
+						<span class="input-group-text">내용</span>
+					</div>
+					<textarea class="form-control" rows="10" placeholder="내용을 입력하세요." id="contentInput">${post.content }</textarea>
+				</div>
+				<!-- 제목, 내용, 파일 업로드 
 				<div class="d-flex align-items-center">
 					<label>제목 : </label>
 					<input type="text" class="form-control col-11 ml-3" id="titleInput" value="${post.subject }">
 				</div>
 				
 				<textarea class="form-control mt-3" rows="5" id="contentInput">${post.content }</textarea>
-				
+				-->
 				<c:if test="${not empty post.imagePath }">
 					<img class="mt-3" src="${post.imagePath }">
 				</c:if>
 				
-				<div class="d-flex justify-content-between mt-3">
+				<div class="d-flex justify-content-between mt-5">
 					<div>
 						<a href="/post/list_view" class="btn btn-info">목록으로</a>
 						<button type="button" class="btn btn-danger" id="deleteBtn" data-post-id="${post.id}">삭제</button>
