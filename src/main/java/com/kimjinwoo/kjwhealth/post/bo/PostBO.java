@@ -1,5 +1,6 @@
 package com.kimjinwoo.kjwhealth.post.bo;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
@@ -9,8 +10,10 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.kimjinwoo.kjwhealth.common.FileManagerService;
 import com.kimjinwoo.kjwhealth.post.comment.bo.CommentBO;
+import com.kimjinwoo.kjwhealth.post.comment.model.Comment;
 import com.kimjinwoo.kjwhealth.post.dao.PostDAO;
 import com.kimjinwoo.kjwhealth.post.model.Post;
+import com.kimjinwoo.kjwhealth.post.model.PostWithComments;
 
 @Service
 public class PostBO {
@@ -35,6 +38,24 @@ public class PostBO {
 		}
 		
 		return postDAO.insertPost(userId, title, content, filePath);
+	}
+	
+	public List<PostWithComments> getPostList(int userId) {
+		List<Post> postList = postDAO.selectHealthList(userId);
+		
+		List<PostWithComments> postWithCommentsList = new ArrayList<>();
+		
+		for(Post post : postList) {
+			List<Comment> commentList = commentBO.getCommentListByPostId(post.getId());
+			
+			PostWithComments postWithComments = new PostWithComments();
+			postWithComments.setPost(post);
+			postWithComments.setCommentList(commentList);
+			
+			postWithCommentsList.add(postWithComments);
+		}
+		
+		return postWithCommentsList;
 	}
 	
 	public List<Post> getHealthList(int userId, Integer nextId, Integer prevId) {

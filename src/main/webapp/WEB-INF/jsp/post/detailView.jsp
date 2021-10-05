@@ -38,6 +38,25 @@
 					</div>
 					<textarea class="form-control" rows="10" placeholder="내용을 입력하세요." id="contentInput">${post.content }</textarea>
 				</div>
+				
+				<!-- 댓글 -->
+				<div class="font-weight-bold">댓글</div>
+				<hr>
+				<c:forEach var="comment" items="${postWithComments.commentList }" varStatus="status">
+					<c:if test="${postWithComments.post.id eq comment.postId }">
+						<div class="d-flex">
+							<div class="font-weight-bold mr-2">${comment.userName }</div>
+							<div>${comment.content }</div>
+						</div>
+					</c:if>
+				</c:forEach>
+				
+				<!-- 댓글 입력 -->
+				<div class="d-flex justify-content-between mt-2">
+					<input type="text" class="form-control mr-1" placeholder="댓글 달기..." id="commentInput-${postWithComments.post.id }">
+					<button type="button" class="btn btn-primary commentBtn" data-post-id="${postWithComments.post.id }">게시</button>
+				</div>
+				
 				<!-- 제목, 내용, 파일 업로드 
 				<div class="d-flex align-items-center">
 					<label>제목 : </label>
@@ -103,6 +122,33 @@
 					error:function(e) {
 						alert("error");
 					}
+				});
+			});
+			
+			$(".commentBtn").on("click", function() {
+				var postId = $(this).data("post-id");
+				var comment = $("#commentInput-" + postId).val().trim();
+
+				if(comment == null || comment == "") {
+					alert("내용을 입력하세요.");
+					return;
+				}
+				
+				$.ajax({
+					type:"get",
+					url:"/post/comment/create",
+					data:{"postId":postId, "content":comment},
+					success:function(data) {
+						if(data.result == "success") {
+							location.reload();
+						} else {
+							alert("댓글 쓰기에 실패했습니다!");
+						}
+					},
+					error(e) {
+						alert("error");
+					}
+					
 				});
 			});
 		});

@@ -22,7 +22,12 @@
 		<div class="d-flex justify-content-center">
 			<div class="w-50">
 				<div class="d-flex justify-content-between align-items-center">
-					<h1 class="font-weight-bold">진단하기</h1>
+					<div class="navbar navbar-light">
+						<a class="navbar-brand" href="#">
+							<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="40" height="40" class="d-inline-block align-top" alt="">
+						</a>
+						<h1 class="font-weight-bold">진단하기</h1>
+					</div>
 					<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
 				</div>
 				<div class="input-group input-group-lg mt-5">
@@ -93,7 +98,14 @@
 		
 		<div class="d-flex justify-content-center">
 			<div class="w-50 mt-3">
-				<h1 class="font-weight-bold mt-4 mb-3">자가진단</h1>
+				<div class="d-flex">
+					<div class="navbar navbar-light">
+						<a class="navbar-brand" href="#">
+							<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="40" height="40" class="d-inline-block align-top" alt="">
+						</a>
+					</div>
+					<h1 class="font-weight-bold mt-3 mb-3">자가진단</h1>
+				</div>
 				<div class="d-flex justify-content-between align-items-center">
 					<h4>설문1</h4>
 					<input type="checkbox">

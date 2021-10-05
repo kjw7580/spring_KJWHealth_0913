@@ -34,6 +34,7 @@
 						${record.diagnosisResultCreatedAt }
 					</h2>
 					<h3><a href="#">${selfDiagnosis.content }</a></h3>
+					<h1>version2에서 업데이트 예정!</h1>
 				</c:forEach>
 			</c:forEach>
 		</div>
