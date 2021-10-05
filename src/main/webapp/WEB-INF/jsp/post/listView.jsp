@@ -45,11 +45,13 @@
 					</thead>
 					<tbody>
 						<c:forEach var="health" items="${healthList }" varStatus="status">
+
 							<tr>
 								<td>${health.id }</td>
 								<td><a href="/post/detail_view?id=${health.id }"> ${health.subject } </a></td>
 								<td><fmt:formatDate value="${health.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 							</tr>
+
 						</c:forEach>
 					</tbody>
 				</table>

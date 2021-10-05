@@ -35,4 +35,8 @@ public class HealthProductsBO {
 	public List<HealthProducts> getHealthProducts() {
 		return healthProductsDAO.selectHealthProducts();
 	}
+	
+	public HealthProducts getHealthProductsById(int id) {
+		return healthProductsDAO.selectHealthProductsById(id);
+	}
 }

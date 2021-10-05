@@ -36,4 +36,19 @@
  			`selfdiagnosis`
 
  	</select>
+ 	
+ 	<select id="selectSelfDiagnosisById" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.selfDiagnosis.model.SelfDiagnosis">
+ 		SELECT
+ 			`id`
+ 			,`minBMI`
+ 			, `maxBMI`
+ 			, `content`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`selfdiagnosis`
+ 		WHERE
+ 			`id` = #{id}
+ 	</select>
  </mapper>

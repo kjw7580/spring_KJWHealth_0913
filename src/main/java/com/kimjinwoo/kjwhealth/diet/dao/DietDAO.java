@@ -18,4 +18,6 @@ public interface DietDAO {
 			, @Param("recipe") String recipe);
 	
 	public List<Diet> selectDiet();
+	
+	public Diet selectDietById(@Param("id") int id);
 }

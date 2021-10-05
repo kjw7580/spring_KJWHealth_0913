@@ -35,4 +35,8 @@ public class DietBO {
 	public List<Diet> getDiet() {
 		return dietDAO.selectDiet();
 	}
+	
+	public Diet getDietById(int id) {
+		return dietDAO.selectDietById(id);
+	}
 }

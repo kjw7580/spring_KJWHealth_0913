@@ -16,4 +16,6 @@ public interface SelfDiagnosisDAO {
 			, @Param("content") String content);
 	
 	public List<SelfDiagnosis> selectSelfDiagnosis();
+	
+	public SelfDiagnosis selectSelfDiagnosisById(@Param("id") int id);
 }

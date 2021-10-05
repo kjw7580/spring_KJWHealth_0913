@@ -22,4 +22,8 @@ public class SelfDiagnosisBO {
 	public List<SelfDiagnosis> getSelfDiagnosis() {
 		return selfDiagnosisDAO.selectSelfDiagnosis();
 	}
+	
+	public SelfDiagnosis getSelfDiagnosisById(int id) {
+		return selfDiagnosisDAO.selectSelfDiagnosisById(id);
+	}
 }

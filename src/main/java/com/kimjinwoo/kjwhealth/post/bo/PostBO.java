@@ -40,8 +40,8 @@ public class PostBO {
 		return postDAO.insertPost(userId, title, content, filePath);
 	}
 	
-	public List<PostWithComments> getPostList(int userId) {
-		List<Post> postList = postDAO.selectHealthList(userId);
+	public List<PostWithComments> getPostHealthList(int id, int userId) {
+		List<Post> postList = postDAO.selectPostHealthList(id);
 		
 		List<PostWithComments> postWithCommentsList = new ArrayList<>();
 		

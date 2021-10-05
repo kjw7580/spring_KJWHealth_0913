@@ -28,13 +28,12 @@
 		</div>
 		
 		<div class="text-center">
-			<c:forEach var="record" items="${record }" varStatus="status">
+			<c:forEach var="diagnosisResult" items="${diagnosisResult }" varStatus="status">
+				<h2 class="mt-5 font-weight-bold">
+					${diagnosisResult.createdAt }
+				</h2>
 				<c:forEach var="selfDiagnosis" items="${selfDiagnosis }" varStatus="status">
-					<h2 class="mt-5 font-weight-bold">
-						${record.diagnosisResultCreatedAt }
-					</h2>
-					<h3><a href="#">${selfDiagnosis.content }</a></h3>
-					<h1>version2에서 업데이트 예정!</h1>
+					<h3><a href="/post/detail_record?id=${diagnosisResult.id }">${selfDiagnosis.content }</a></h3>
 				</c:forEach>
 			</c:forEach>
 		</div>

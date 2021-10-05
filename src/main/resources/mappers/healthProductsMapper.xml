@@ -39,4 +39,20 @@
  			`healthproducts`
  		ORDER BY `id` DESC LIMIT 6
  	</select>
+ 	
+ 	<select id="selectHealthProductsById" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.healthProducts.model.HealthProducts">
+ 		SELECT
+ 			`id`
+ 			,`minBMI`
+ 			, `maxBMI`
+ 			, `name`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`healthproducts`
+ 		WHERE
+ 			`id` = #{id}
+ 	</select>
  </mapper>

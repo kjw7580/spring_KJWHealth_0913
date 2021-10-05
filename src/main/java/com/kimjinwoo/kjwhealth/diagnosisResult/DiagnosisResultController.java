@@ -36,7 +36,7 @@ public class DiagnosisResultController {
 	@GetMapping("/diagnosis_result")
 	public String diagnosisResultView(Model model) {
 		
-List<BMI> bmi = bmiBO.getBMI();
+		List<BMI> bmi = bmiBO.getBMI();
 		
 		model.addAttribute("bmi", bmi);
 		

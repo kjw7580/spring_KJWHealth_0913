@@ -52,7 +52,7 @@
 				<div class="mt-3">
 					<c:forEach var="selfDiagnosis" items="${selfDiagnosis }" varStatus="status">
 						<c:if test="${BMI > selfDiagnosis.minBMI && BMI < selfDiagnosis.maxBMI }">
-							<div class="text-left">${selfDiagnosis.content }</div>
+							<div class="text-left" id="selfDiagnosisContent">${selfDiagnosis.content }</div>
 						</c:if>
 					</c:forEach>
 				</div>
@@ -69,9 +69,9 @@
 					<c:forEach var="diet" items="${diet }" varStatus="status">
 						<c:if test="${BMI > diet.minBMI && BMI < diet.maxBMI }">
 							<div class="card" style="width: 18rem;">
-							<img class="card-img-top" src="${diet.imagePath }" alt="Card image cap">
+							<img class="card-img-top" id="dietImagePath" src="${diet.imagePath }" alt="Card image cap">
 								<div class="card-body">
-									<h2>${diet.name }</h2>
+									<h2 id="dietName">${diet.name }</h2>
 								</div>
 							</div>
 							
@@ -101,9 +101,9 @@
 					<c:forEach var="product" items="${healthProducts }" varStatus="status">
 						<c:if test="${BMI > product.minBMI && BMI < product.maxBMI }">
 							<div class="card" style="width: 18rem;">
-							<img class="card-img-top" src="${product.imagePath }" alt="Card image cap">
+							<img class="card-img-top" id="healthProductsImagePath" src="${product.imagePath }" alt="Card image cap">
 								<div class="card-body">
-									<h2>${product.name }</h2>
+									<h2 id="healthProductsName">${product.name }</h2>
 								</div>
 							</div>
 							
@@ -129,9 +129,39 @@
 	<script>
 		$(document).ready(function() {
 			$(".recordBtn").on("click", function() {
+				//var selfDiagnosisContent = $("#selfDiagnosisContent").val();
+				//var dietName = $("#dietName").val();
+				//var healthProductsName = $("#healthProductsName").val();
+				//var dietImagePath = $("#dietImagePath").val();
+				//var healthProductsImagePath = $("#healthProductsImagePath").val();
+				var selfDiagnosisString = '';
+				<c:forEach items="${selfDiagnosis}" var="selfDiagnosisItem">
+					<c:if test="${BMI > selfDiagnosisItem.minBMI && BMI < selfDiagnosisItem.maxBMI }">
+						selfDiagnosisString = selfDiagnosisString.concat("${selfDiagnosisItem.id}", ',');
+					</c:if>
+				</c:forEach>
+				selfDiagnosisString = selfDiagnosisString.slice(0, -1);
+				var dietString = '';
+				<c:forEach items="${diet}" var="dietItem">
+					<c:if test="${BMI > dietItem.minBMI && BMI < dietItem.maxBMI }">
+						dietString = dietString.concat("${dietItem.id}", ',');
+					</c:if>
+				</c:forEach>
+				dietString = dietString.slice(0, -1);
+				var healthProductsString = '';
+				<c:forEach items="${healthProducts}" var="healthProductsItem">
+					<c:if test="${BMI > healthProductsItem.minBMI && BMI < healthProductsItem.maxBMI }">
+						healthProductsString = healthProductsString.concat("${healthProductsItem.id}", ',');
+					</c:if>
+				</c:forEach>
+				healthProductsString = healthProductsString.slice(0, -1);
+				
 				$.ajax({
 					type:"post",
-					url:"/post/record/create",
+					url:"/post/diagnosis_result/create",
+					dataType:"json",
+					//data:{"selfDiagnosisContent":selfDiagnosisContent, "dietName":dietName, "healthProductsName":healthProductsName, "dietImagePath":dietImagePath, "healthProductsImagePath":healthProductsImagePath},
+					data:{"selfDiagnosisId":selfDiagnosisString, "dietId":dietString, "healthProductsId":healthProductsString},
 					success:function(data) {
 						if(data.result == "success") {
 							alert("기록 성공");

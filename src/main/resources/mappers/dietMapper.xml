@@ -42,4 +42,21 @@
  			`diet`
  		ORDER BY `id` DESC LIMIT 6
  	</select>
+ 	
+ 	<select id="selectDietById" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.diet.model.Diet">
+ 		SELECT
+ 			`id`
+ 			,`minBMI`
+ 			, `maxBMI`
+ 			, `name`
+ 			, `imagePath`
+ 			, `recipe`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`diet`
+ 		WHERE
+ 			`id` = #{id}
+ 	</select>
  </mapper>

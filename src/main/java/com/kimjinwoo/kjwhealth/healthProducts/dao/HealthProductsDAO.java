@@ -18,4 +18,6 @@ public interface HealthProductsDAO {
 	
 	public List<HealthProducts> selectHealthProducts();
 	
+	public HealthProducts selectHealthProductsById(@Param("id") int id);
+	
 }

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+ 
+ <mapper namespace="com.kimjinwoo.kjwhealth.diagnosisResult.dao.DiagnosisResultDAO">
+ 	<insert id="insertDiagnosisResult" parameterType="map">
+ 		INSERT INTO
+ 			`diagnosisResult`
+ 		(
+ 			`userId`
+ 			, `selfDiagnosisId`
+ 			, `dietId`
+ 			, `healthProductsId`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		) VALUES (
+ 			#{userId}
+ 			, #{selfDiagnosisId}
+ 			, #{dietId}
+ 			, #{healthProductsId}
+ 			, now()
+ 			, now()
+ 		)
+ 		
+ 	</insert>
+ 	
+ 	<select id="selectDiagnosisResult" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.diagnosisResult.model.DiagnosisResult">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `selfDiagnosisId`
+ 			, `dietId`
+ 			, `healthProductsId`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`diagnosisResult`
+ 		WHERE
+ 			`id` = #{id}
+ 			AND `userId` = #{userId}
+ 	</select>
+ 	
+ 	<select id="selectRecordDiagnosisResult" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.diagnosisResult.model.DiagnosisResult">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `selfDiagnosisId`
+ 			, `dietId`
+ 			, `healthProductsId`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`diagnosisResult`
+ 		WHERE
+ 			`userId` = #{userId}
+ 	</select>
+ </mapper>

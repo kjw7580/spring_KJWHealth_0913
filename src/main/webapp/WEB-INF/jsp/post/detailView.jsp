@@ -24,59 +24,61 @@
 		</div>
 		
 		<section class="d-flex justify-content-center">
-			<div class="detail-box w-75 mt-5">
-				<div class="input-group mb-3 mt-5">
-					<div class="input-group-prepend">
-						<span class="input-group-text">제목</span>
-					</div>
-					<input type="text" class="form-control" placeholder="제목을 입력하세요." id="titleInput" value="${post.subject }">
-				</div>
-				
-				<div class="input-group">
-					<div class="input-group-prepend">
-						<span class="input-group-text">내용</span>
-					</div>
-					<textarea class="form-control" rows="10" placeholder="내용을 입력하세요." id="contentInput">${post.content }</textarea>
-				</div>
-				
-				<!-- 댓글 -->
-				<div class="font-weight-bold">댓글</div>
-				<hr>
-				<c:forEach var="comment" items="${postWithComments.commentList }" varStatus="status">
-					<c:if test="${postWithComments.post.id eq comment.postId }">
-						<div class="d-flex">
-							<div class="font-weight-bold mr-2">${comment.userName }</div>
-							<div>${comment.content }</div>
+			<c:forEach var="postWithComments" items="${postList }" varStatus="status">
+				<div class="detail-box w-75 mt-5">
+					<div class="input-group mb-3 mt-5">
+						<div class="input-group-prepend">
+							<span class="input-group-text">제목</span>
 						</div>
-					</c:if>
-				</c:forEach>
-				
-				<!-- 댓글 입력 -->
-				<div class="d-flex justify-content-between mt-2">
-					<input type="text" class="form-control mr-1" placeholder="댓글 달기..." id="commentInput-${postWithComments.post.id }">
-					<button type="button" class="btn btn-primary commentBtn" data-post-id="${postWithComments.post.id }">게시</button>
-				</div>
-				
-				<!-- 제목, 내용, 파일 업로드 
-				<div class="d-flex align-items-center">
-					<label>제목 : </label>
-					<input type="text" class="form-control col-11 ml-3" id="titleInput" value="${post.subject }">
-				</div>
-				
-				<textarea class="form-control mt-3" rows="5" id="contentInput">${post.content }</textarea>
-				-->
-				<c:if test="${not empty post.imagePath }">
-					<img class="mt-3" src="${post.imagePath }">
-				</c:if>
-				
-				<div class="d-flex justify-content-between mt-5">
-					<div>
-						<a href="/post/list_view" class="btn btn-info">목록으로</a>
-						<button type="button" class="btn btn-danger" id="deleteBtn" data-post-id="${post.id}">삭제</button>
+						<input type="text" class="form-control" placeholder="제목을 입력하세요." id="titleInput" value="${postWithComments.post.subject }">
 					</div>
-					<button type="button" class="btn btn-success" id="updateBtn" data-post-id="${post.id}">수정</button>
+					
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">내용</span>
+						</div>
+						<textarea class="form-control" rows="10" placeholder="내용을 입력하세요." id="contentInput">${postWithComments.post.content }</textarea>
+					</div>
+					
+					<!-- 댓글 -->
+					<div class="font-weight-bold">댓글</div>
+					<hr>
+					<c:forEach var="comment" items="${postWithComments.commentList }" varStatus="status">
+						<c:if test="${postWithComments.post.id eq comment.postId }">
+							<div class="d-flex">
+								<div class="font-weight-bold mr-2">${comment.userName }</div>
+								<div>${comment.content }</div>
+							</div>
+						</c:if>
+					</c:forEach>
+					
+					<!-- 댓글 입력 -->
+					<div class="d-flex justify-content-between mt-2">
+						<input type="text" class="form-control mr-1" placeholder="댓글 달기..." id="commentInput-${postWithComments.post.id }">
+						<button type="button" class="btn btn-primary commentBtn" data-post-id="${postWithComments.post.id }">게시</button>
+					</div>
+					
+					<!-- 제목, 내용, 파일 업로드 
+					<div class="d-flex align-items-center">
+						<label>제목 : </label>
+						<input type="text" class="form-control col-11 ml-3" id="titleInput" value="${post.subject }">
+					</div>
+					
+					<textarea class="form-control mt-3" rows="5" id="contentInput">${post.content }</textarea>
+					-->
+					<c:if test="${not empty postWithComments.post.imagePath }">
+						<img class="mt-3" src="${postWithComments.post.imagePath }">
+					</c:if>
+					
+					<div class="d-flex justify-content-between mt-5">
+						<div>
+							<a href="/post/list_view" class="btn btn-info">목록으로</a>
+							<button type="button" class="btn btn-danger" id="deleteBtn" data-post-id="${postWithComments.post.id}">삭제</button>
+						</div>
+						<button type="button" class="btn btn-success" id="updateBtn" data-post-id="${postWithComments.post.id}">수정</button>
+					</div>
 				</div>
-			</div>
+			</c:forEach>
 		</section>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>

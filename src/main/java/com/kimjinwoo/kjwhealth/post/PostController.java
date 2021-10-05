@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kimjinwoo.kjwhealth.post.bo.PostBO;
 import com.kimjinwoo.kjwhealth.post.model.Post;
+import com.kimjinwoo.kjwhealth.post.model.PostWithComments;
 
 @Controller
 @RequestMapping("/post")
@@ -72,9 +73,9 @@ public class PostController {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		Post post = postBO.getHealth(id, userId);
+		List<PostWithComments> postList = postBO.getPostHealthList(id, userId);
 		
-		model.addAttribute("post", post);
+		model.addAttribute("postList", postList);
 		
 		return "post/detailView";
 	}
