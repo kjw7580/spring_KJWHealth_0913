@@ -40,6 +40,19 @@
 						<textarea class="form-control" rows="10" placeholder="내용을 입력하세요." id="contentInput">${postWithComments.post.content }</textarea>
 					</div>
 					
+					<!-- 제목, 내용, 파일 업로드 
+					<div class="d-flex align-items-center">
+						<label>제목 : </label>
+						<input type="text" class="form-control col-11 ml-3" id="titleInput" value="${post.subject }">
+					</div>
+					
+					<textarea class="form-control mt-3" rows="5" id="contentInput">${post.content }</textarea>
+					-->
+					
+					<c:if test="${not empty postWithComments.post.imagePath }">
+						<img class="mt-3" src="${postWithComments.post.imagePath }">
+					</c:if>
+					
 					<!-- 댓글 -->
 					<div class="font-weight-bold">댓글</div>
 					<hr>
@@ -57,19 +70,6 @@
 						<input type="text" class="form-control mr-1" placeholder="댓글 달기..." id="commentInput-${postWithComments.post.id }">
 						<button type="button" class="btn btn-primary commentBtn" data-post-id="${postWithComments.post.id }">게시</button>
 					</div>
-					
-					<!-- 제목, 내용, 파일 업로드 
-					<div class="d-flex align-items-center">
-						<label>제목 : </label>
-						<input type="text" class="form-control col-11 ml-3" id="titleInput" value="${post.subject }">
-					</div>
-					
-					<textarea class="form-control mt-3" rows="5" id="contentInput">${post.content }</textarea>
-					-->
-					<c:if test="${not empty postWithComments.post.imagePath }">
-						<img class="mt-3" src="${postWithComments.post.imagePath }">
-					</c:if>
-					
 					<div class="d-flex justify-content-between mt-5">
 						<div>
 							<a href="/post/list_view" class="btn btn-info">목록으로</a>
@@ -80,6 +80,7 @@
 				</div>
 			</c:forEach>
 		</section>
+		<hr>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>
 	

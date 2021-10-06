@@ -56,5 +56,6 @@
  			`diagnosisResult`
  		WHERE
  			`userId` = #{userId}
+ 		ORDER BY `id` DESC
  	</select>
  </mapper>

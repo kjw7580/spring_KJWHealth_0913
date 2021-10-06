@@ -188,7 +188,7 @@
 		        	</div>
 		        	<div class="list-group mt-3">
 						<c:forEach var="mainHealth" items="${mainHealthList }" varStatus="status">
-	        				<a href="#" class="list-group-item list-group-item-action text-primary">${mainHealth.subject }</a>
+	        				<a href="/post/detail_view?id=${mainHealth.id }" class="list-group-item list-group-item-action text-primary">${mainHealth.subject }</a>
 	        			</c:forEach>
 					</div>
 		        	<!-- 

@@ -79,6 +79,10 @@ public class RecordController {
 		
 		List<HealthProducts> healthProductsList = new ArrayList<HealthProducts>();
 		
+		List<Diet> dietList = new ArrayList<Diet>();
+		
+		List<SelfDiagnosis> selfDiagnosisList = new ArrayList<SelfDiagnosis>();
+		
 		for(DiagnosisResult diagnosisResult : diagnosisResultList) {
 //			System.out.println(diagnosisResult.getHealthProductsId());
 			
@@ -90,13 +94,6 @@ public class RecordController {
 				HealthProducts healthProducts = healthProductsBO.getHealthProductsById(Integer.parseInt(healthProductsId));
 				healthProductsList.add(healthProducts);
 			}
-		}
-		
-		model.addAttribute("healthProductsList", healthProductsList);
-		
-		List<Diet> dietList = new ArrayList<Diet>();
-		
-		for(DiagnosisResult diagnosisResult : diagnosisResultList) {
 			
 			String dietIds[] = diagnosisResult.getDietId().split(",");
 			for(String dietId : dietIds) {
@@ -104,21 +101,42 @@ public class RecordController {
 				Diet diet = dietBO.getDietById(Integer.parseInt(dietId));
 				dietList.add(diet);
 			}
-		}
-		
-		model.addAttribute("dietList", dietList);
-		
-		List<SelfDiagnosis> selfDiagnosisList = new ArrayList<SelfDiagnosis>();
-		
-		for(DiagnosisResult diagnosisResult : diagnosisResultList) {
 			
-			String selfDiagnosisIds[] = diagnosisResult.getDietId().split(",");
+			String selfDiagnosisIds[] = diagnosisResult.getSelfDiagnosisId().split(",");
 			for(String selfDiagnosisId : selfDiagnosisIds) {
 				
 				SelfDiagnosis selfDiagnosis = selfDiagnosisBO.getSelfDiagnosisById(Integer.parseInt(selfDiagnosisId));
 				selfDiagnosisList.add(selfDiagnosis);
 			}
 		}
+		
+		model.addAttribute("healthProductsList", healthProductsList);
+		
+//		List<Diet> dietList = new ArrayList<Diet>();
+//		
+//		for(DiagnosisResult diagnosisResult : diagnosisResultList) {
+//			
+//			String dietIds[] = diagnosisResult.getDietId().split(",");
+//			for(String dietId : dietIds) {
+//				
+//				Diet diet = dietBO.getDietById(Integer.parseInt(dietId));
+//				dietList.add(diet);
+//			}
+//		}
+		
+		model.addAttribute("dietList", dietList);
+		
+//		List<SelfDiagnosis> selfDiagnosisList = new ArrayList<SelfDiagnosis>();
+//		
+//		for(DiagnosisResult diagnosisResult : diagnosisResultList) {
+//			
+//			String selfDiagnosisIds[] = diagnosisResult.getSelfDiagnosisId().split(",");
+//			for(String selfDiagnosisId : selfDiagnosisIds) {
+//				
+//				SelfDiagnosis selfDiagnosis = selfDiagnosisBO.getSelfDiagnosisById(Integer.parseInt(selfDiagnosisId));
+//				selfDiagnosisList.add(selfDiagnosis);
+//			}
+//		}
 		
 		model.addAttribute("selfDiagnosisList", selfDiagnosisList);
 		

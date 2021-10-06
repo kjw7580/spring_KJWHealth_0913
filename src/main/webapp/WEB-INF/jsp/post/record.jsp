@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>    
 <!DOCTYPE html>
 <html>
 <head>
@@ -30,11 +31,13 @@
 		<div class="text-center">
 			<c:forEach var="diagnosisResult" items="${diagnosisResult }" varStatus="status">
 				<h2 class="mt-5 font-weight-bold">
-					${diagnosisResult.createdAt }
+					<fmt:formatDate value="${diagnosisResult.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" />
 				</h2>
+				<h3><a href="/post/detail_record?id=${diagnosisResult.id }">보러가기</a></h3>
+				<!-- 
 				<c:forEach var="selfDiagnosis" items="${selfDiagnosis }" varStatus="status">
-					<h3><a href="/post/detail_record?id=${diagnosisResult.id }">${selfDiagnosis.content }</a></h3>
 				</c:forEach>
+				 -->
 			</c:forEach>
 		</div>
 		<hr>
