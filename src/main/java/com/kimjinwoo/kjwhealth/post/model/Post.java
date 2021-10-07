@@ -11,6 +11,9 @@ public class Post {
 	private Date createdAt;
 	private Date updatedAt;
 	
+	private String key;
+	private String word;
+	
 	public int getId() {
 		return id;
 	}
@@ -54,4 +57,16 @@ public class Post {
 		this.updatedAt = updatedAt;
 	}
 	
+	public String getKey() {
+		return key;
+	}
+	public void setKey(String key) {
+		this.key = key;
+	}
+	public String getWord() {
+		return word;
+	}
+	public void setWord(String word) {
+		this.word = word;
+	}
 }

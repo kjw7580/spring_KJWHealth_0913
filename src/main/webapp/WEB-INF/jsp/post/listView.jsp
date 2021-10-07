@@ -40,15 +40,17 @@
 						<tr>
 							<th>No.</th>
 							<th>제목</th>
+							<th>작성자</th>
 							<th>시간</th>
 						</tr>
 					</thead>
 					<tbody>
-						<c:forEach var="health" items="${healthList }" varStatus="status">
+						<c:forEach var="health" items="${getPostHealthList }" varStatus="status">
 
 							<tr>
 								<td>${health.id }</td>
 								<td><a href="/post/detail_view?id=${health.id }"> ${health.subject } </a></td>
+								<td>${userName }</td>
 								<td><fmt:formatDate value="${health.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" /></td>
 							</tr>
 
@@ -75,6 +77,21 @@
 				</div>
 			</div>
 		</section>
+		<form class="navbar-form">
+			<div class="w-25 form-group navbar-left">
+				<select name="key" class="form-control">
+					<option value="subject" ${(post.key == "subject") ? " selected ":"" }>제목</option>
+					<option value="content" ${(post.key == "content") ? " selected ":"" }>내용</option>
+					<option value="createdAt" ${(post.key == "createdAt") ? " selected ":"" }>게시날짜</option>
+					<option value="subjectContent" ${(post.key == "subjectContent") ? " selected ":"" }>제목/내용</option>
+					<option value="subjectCreatedAt" ${(post.key == "subjectCreatedAt") ? " selected ":"" }>제목/게시날짜</option>
+					<option value="contentCreatedAt" ${(post.key == "contentCreatedAt") ? " selected ":"" }>내용/게시날짜</option>
+					<option value="all" ${(post.key == "all") ? " selected ":"" }>전체</option>
+				</select>
+				<input type="text" name="word" class="form-control" value="${post.word }" placeholder="Search">
+			</div>
+			<button type="submit" class="btn btn-info">검색</button>
+		</form>
 		<hr>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>

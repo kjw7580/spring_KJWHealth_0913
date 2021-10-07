@@ -58,7 +58,7 @@ public class PostBO {
 		return postWithCommentsList;
 	}
 	
-	public List<Post> getHealthList(int userId, Integer nextId, Integer prevId) {
+	public List<Post> getHealthList(int userId, String word, String key, Integer nextId, Integer prevId) {
 		if(nextId != null) {
 			return postDAO.selectHealthListByNextId(userId, nextId);
 		} else if(prevId != null) {	// 이전버튼
@@ -70,7 +70,7 @@ public class PostBO {
 			return healthList;
 		}
 		
-		return postDAO.selectHealthList(userId);
+		return postDAO.selectHealthList(userId, word, key);
 	}
 	
 	public List<Post> getMainHealthList() {

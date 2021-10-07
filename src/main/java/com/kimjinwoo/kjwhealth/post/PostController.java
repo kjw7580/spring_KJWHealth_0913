@@ -32,7 +32,10 @@ public class PostController {
 	public String listView(
 			@RequestParam(value = "nextId", required = false) Integer nextId
 			, @RequestParam(value = "prevId", required = false) Integer prevId
+			, @RequestParam(value = "word", required = false) String word
+			, @RequestParam(value = "key", required = false) String key
 			, Model model
+			, Post post
 			, HttpServletRequest request) {
 
 		HttpSession session = request.getSession();
@@ -41,7 +44,7 @@ public class PostController {
 		
 		// 10 9 8 | 7 6 5 | 4 3 2 | 1
 		// 5 6 7 | 8 9 10
-		List<Post> healthList = postBO.getHealthList(userId, nextId, prevId);
+		List<Post> healthList = postBO.getHealthList(userId, word, key, nextId, prevId);
 		
 		int currentNextId = 0;
 		int currentPrevId = 0;
@@ -60,6 +63,9 @@ public class PostController {
 		model.addAttribute("healthList", healthList);
 		model.addAttribute("nextId", currentNextId);
 		model.addAttribute("prevId", currentPrevId);
+		
+		model.addAttribute("getPostHealthList", postBO.getHealthList(userId, word, key, nextId, prevId));
+		model.addAttribute("post", post);
 		
 		return "post/listView";
 	}

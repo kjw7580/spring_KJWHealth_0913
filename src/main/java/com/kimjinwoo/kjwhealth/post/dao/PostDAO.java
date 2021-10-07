@@ -16,7 +16,9 @@ public interface PostDAO {
 			, @Param("content") String content
 			, @Param("imagePath") String imagePath);
 	
-	public List<Post> selectHealthList(@Param("userId") int userId);
+	public List<Post> selectHealthList(@Param("userId") int userId
+			, @Param("word") String word
+			, @Param("key") String key);
 	
 	public List<Post> selectMainHealthList();
 	

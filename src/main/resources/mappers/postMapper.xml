@@ -37,8 +37,8 @@
  			, `updatedAt`
  		FROM
  			`post`
- 		WHERE
- 			`userId` = #{userId}
+
+		<include refid="search" />
  		ORDER BY `id` DESC
  		LIMIT 10
  	</select>
@@ -185,4 +185,38 @@
  			`id` = #{id}
  			AND `userId` = #{userId}
  	</delete>
+ 	
+ 	<sql id="search">
+ 		<if test="word != null and word !=''.toString()">
+ 			WHERE ( 2 = 1
+ 				<if test="key == 'subject'.toString()">
+ 					OR subject like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'content'.toString()">
+ 					OR content like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'createdAt'.toString()">
+ 					OR createdAt like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'subjectContent'.toString()">
+ 					OR subject like concat('%', #{word}, '%')
+ 					OR content like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'subjectCreatedAt'.toString()">
+ 					OR subject like concat('%', #{word}, '%')
+ 					OR createdAt like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'contentCreatedAt'.toString()">
+ 					OR content like concat('%', #{word}, '%')
+ 					OR createdAt like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'all'.toString()">
+ 					OR subject like concat('%', #{word}, '%')
+ 					OR content like concat('%', #{word}, '%')
+ 					OR createdAt like concat('%', #{word}, '%')
+ 				</if>
+ 			)
+ 		</if>
+ 	</sql>
+
  </mapper>
