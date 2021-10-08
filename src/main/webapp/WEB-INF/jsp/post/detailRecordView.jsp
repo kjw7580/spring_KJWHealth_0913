@@ -39,48 +39,43 @@
 		</div>
 	</c:forEach>
 	 -->
-	<div id="wrap">
+	<div id="wrap" class="detail-record-view form-control">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
-		
+		<hr>
 		<div class="d-flex justify-content-center align-items-center">
 			<div class="w-75">
 				<div class="d-flex justify-content-between align-items-center">
-					<nav class="navbar navbar-light mt-3">
-						<a class="navbar-brand" href="#">
-							<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
-						</a>
-						<h1 class="font-weight-bold" id="nowBMI">진단결과</h1>
-					</nav>
-					<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
+					<blockquote class="blockquote mt-3">
+						<h3><p class="mb-0">진단결과</p></h3>
+						<footer class="blockquote-footer">KJW Health <cite title="Source Title">Diagnosis Result</cite></footer>
+					</blockquote>
+					<a href="/post/record" class="btn btn-success">기록실로 돌아가기</a>
 				</div>
 				
-				<div class="d-flex justify-content-between align-items-center mt-5">
-					<nav class="navbar navbar-light">
-						<a class="navbar-brand" href="#">
-							<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
-						</a>
-						<h2 class="font-weight-bold">AI 자가진단 결과</h2>
-					</nav>
+				<div class="d-flex justify-content-between align-items-center">
+					<blockquote class="blockquote">
+						<h3><p class="mb-0">AI 자가진단 결과</p></h3>
+						<footer class="blockquote-footer">KJW Health <cite title="Source Title">Self-Diagnosis</cite></footer>
+					</blockquote>
 				</div>
 
-				<div class="mt-3">
+				<div>
 					<c:forEach var="selfDiagnosis" items="${selfDiagnosisList }" varStatus="status">
-						<div class="text-left" id="selfDiagnosisContent">${selfDiagnosis.content }</div>
+						<div class="text-left font-weight-bold" id="selfDiagnosisContent">${selfDiagnosis.content }</div>
 					</c:forEach>
 				</div>
 				
-				<div class="d-flex mt-3">
-					<nav class="navbar navbar-light">
-						<a class="navbar-brand" href="#">
-							<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
-						</a>
-						<h2 class="font-weight-bold">개인별 식단 추천</h2>
-					</nav>
+				<div class="d-flex mt-5">
+					<blockquote class="blockquote">
+						<h3><p class="mb-0">개인별 식단 추천</p></h3>
+						<footer class="blockquote-footer">KJW Health <cite title="Source Title">Recommend Diet</cite></footer>
+					</blockquote>
 				</div>
-				<div class="d-flex justify-content-between mt-3">
+				<div class="d-flex justify-content-between flex-wrap">
 					<c:forEach var="diet" items="${dietList }" varStatus="status">
-						<div class="card" style="width: 18rem;">
-						<img class="card-img-top" id="dietImagePath" src="${diet.imagePath }" alt="Card image cap">
+						<div>
+							<img src="${diet.imagePath }" width="250px" height="200px" class="rounded-circle" alt="Cinque Terre">
+							<hr>
 							<div class="card-body">
 								<h2 id="dietName">${diet.name }</h2>
 							</div>
@@ -88,32 +83,38 @@
 					</c:forEach>
 				</div>
 				
+				<!-- 
 				<div class="text-right">
-					<a href="/post/recipe" class="btn btn-primary mt-3" id="recipeBtn">레시피 보러가기</a>
+					<c:forEach var="diagnosisResult" items="${diagnosisResults }" varStatus="status">
+						<a href="/post/detail_recipe?id=${diagnosisResult.id }" class="btn btn-primary mt-3" id="recipeBtn">레시피 보러가기</a>
+					</c:forEach>
 				</div>
-				
+				 -->
+				 
 				<div class="d-flex mt-3">
-					<nav class="navbar navbar-light">
-						<a class="navbar-brand" href="#">
-							<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
-						</a>
-						<h2 class="font-weight-bold">개인별 건강용품/식품 추천</h2>
-					</nav>
+					<div class="d-flex mt-5">
+					<blockquote class="blockquote">
+						<h3><p class="mb-0">개인별 건강용품/식품 추천</p></h3>
+						<footer class="blockquote-footer">KJW Health <cite title="Source Title">Recommend Health-Products</cite></footer>
+					</blockquote>
 				</div>
-				<div class="d-flex justify-content-between mt-3">
+				</div>
+				<div class="d-flex justify-content-between flex-wrap">
 					<c:forEach var="product" items="${healthProductsList }" varStatus="status">
-						<div class="card" style="width: 18rem;">
-						<img class="card-img-top" id="healthProductsImagePath" src="${product.imagePath }" alt="Card image cap">
+						<div>
+							<img src="${product.imagePath }" width="250px" height="200px" class="rounded-circle" alt="Cinque Terre">
+							<hr>
 							<div class="card-body">
 								<h2 id="healthProductsName">${product.name }</h2>
 							</div>
 						</div>
 					</c:forEach>
 				</div>
-				
+				<!-- 
 				<div class="text-right">
 					<a href="/post/health_products" class="btn btn-primary mt-3">모두 보러가기</a>
 				</div>
+				 -->
 			</div>
     	</div>
 		<hr>

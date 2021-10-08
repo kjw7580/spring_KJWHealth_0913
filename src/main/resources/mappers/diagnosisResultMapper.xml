@@ -58,4 +58,22 @@
  			`userId` = #{userId}
  		ORDER BY `id` DESC
  	</select>
+ 	
+ 	<select id="selectMyPageDiagnosisResult" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.diagnosisResult.model.DiagnosisResult">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `selfDiagnosisId`
+ 			, `dietId`
+ 			, `healthProductsId`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`diagnosisResult`
+ 		WHERE
+ 			`userId` = #{userId}
+ 		ORDER BY `id` DESC
+ 		LIMIT 5
+ 	</select>
  </mapper>

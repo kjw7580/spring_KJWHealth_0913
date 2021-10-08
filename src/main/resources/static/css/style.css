@@ -65,6 +65,18 @@ header {
 	border:solid 3px skyblue;
 }
 
+.detail-record-view {
+	border:solid 3px black;
+}
+
+.detail-recipe {
+	border:solid 2px black;
+}
+
+.detail-health-products {
+	border:solid 2px black;
+}
+
 footer {
 	height:50px;
 }

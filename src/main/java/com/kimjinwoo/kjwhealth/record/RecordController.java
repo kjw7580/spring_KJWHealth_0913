@@ -75,6 +75,10 @@ public class RecordController {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
+		List<DiagnosisResult> diagnosisResults = diagnosisResultBO.getRecordDiagnosisResult(userId);
+		
+		model.addAttribute("diagnosisResults", diagnosisResults);
+		
 		List<DiagnosisResult> diagnosisResultList = diagnosisResultBO.getDiagnosisResult(id, userId);
 		
 		List<HealthProducts> healthProductsList = new ArrayList<HealthProducts>();

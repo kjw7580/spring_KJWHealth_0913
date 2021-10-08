@@ -25,7 +25,7 @@
  		
  	</insert>
  	
- 	<select id="selectHealthList" parameterType="int" 
+ 	<select id="selectPostHealthListView" parameterType="int" 
  	resultType="com.kimjinwoo.kjwhealth.post.model.Post">
  		SELECT
  			`id`
@@ -37,12 +37,63 @@
  			, `updatedAt`
  		FROM
  			`post`
-
 		<include refid="search" />
+ 		ORDER BY `id` DESC
+ 	</select>
+ 	
+ 	<!-- 
+ 	<select id="selectPageList" parameterType="int" 
+ 	resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `subject`
+ 			, `content`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`post`
+ 		ORDER BY `id` DESC
+ 	</select>
+ 	 -->
+ 	
+ 	<select id="selectMyHealthList" parameterType="int" 
+ 	resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `subject`
+ 			, `content`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`post`
+		WHERE
+			`userId` = #{userId}
  		ORDER BY `id` DESC
  		LIMIT 10
  	</select>
  	
+ 	<select id="selectMyPageList" parameterType="int" 
+ 	resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT
+ 			`id`
+ 			, `userId`
+ 			, `subject`
+ 			, `content`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`post`
+		WHERE
+			`userId` = #{userId}
+ 		ORDER BY `id` DESC
+ 		LIMIT 5
+ 	</select>
+ 	 
  	<select id="selectMainHealthList" parameterType="int" 
  	resultType="com.kimjinwoo.kjwhealth.post.model.Post">
  		SELECT

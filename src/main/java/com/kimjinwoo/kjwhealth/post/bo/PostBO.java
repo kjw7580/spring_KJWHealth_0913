@@ -40,6 +40,22 @@ public class PostBO {
 		return postDAO.insertPost(userId, title, content, filePath);
 	}
 	
+	public List<Post> getPostHealthListView(String word, String key) {
+		return postDAO.selectPostHealthListView(word, key);
+	}
+	
+	public List<Post> getMyHealthList(int userId) {
+		return postDAO.selectMyHealthList(userId);
+	}
+	
+	public List<Post> getMyPageList(int userId) {
+		return postDAO.selectMyPageList(userId);
+	}
+	
+//	public List<Post> getPageList() {
+//		return postDAO.selectPageList();
+//	}
+	
 	public List<PostWithComments> getPostHealthList(int id, int userId) {
 		List<Post> postList = postDAO.selectPostHealthList(id);
 		
@@ -58,32 +74,32 @@ public class PostBO {
 		return postWithCommentsList;
 	}
 	
-	public List<Post> getHealthList(int userId, String word, String key, Integer nextId, Integer prevId) {
-		if(nextId != null) {
-			return postDAO.selectHealthListByNextId(userId, nextId);
-		} else if(prevId != null) {	// 이전버튼
-			// 11 12 13
-			
-			// 13 12 11
-			List<Post> healthList = postDAO.selectHealthListByPrevId(userId, prevId);
-			Collections.reverse(healthList);
-			return healthList;
-		}
-		
-		return postDAO.selectHealthList(userId, word, key);
-	}
+//	public List<Post> getHealthList(int userId, String word, String key, Integer nextId, Integer prevId) {
+//		if(nextId != null) {
+//			return postDAO.selectHealthListByNextId(userId, nextId);
+//		} else if(prevId != null) {	// 이전버튼
+//			// 11 12 13
+//			
+//			// 13 12 11
+//			List<Post> healthList = postDAO.selectHealthListByPrevId(userId, prevId);
+//			Collections.reverse(healthList);
+//			return healthList;
+//		}
+//		
+//		return postDAO.selectHealthList(userId, word, key);
+//	}
 	
 	public List<Post> getMainHealthList() {
 		return postDAO.selectMainHealthList();
 	}
 	
-	public boolean isLastPage(int userId, int nextId) {
-		return postDAO.lastPost(userId).getId() == nextId;
-	}
-	
-	public boolean isFirstPage(int userId, int prevId) {
-		return postDAO.firstPost(userId).getId() == prevId;
-	}
+//	public boolean isLastPage(int userId, int nextId) {
+//		return postDAO.lastPost(userId).getId() == nextId;
+//	}
+//	
+//	public boolean isFirstPage(int userId, int prevId) {
+//		return postDAO.firstPost(userId).getId() == prevId;
+//	}
 	
 	public Post getHealth(int id, int userId) {
 		return postDAO.selectHealth(id, userId);

@@ -170,7 +170,7 @@
 					       	<div class="d-flex justify-content-between mt-2">
 					       		<div class="display-5 font-weight-bold mt-1">${userName }님 환영합니다!!</div>
 					       	</div>
-					       	<a href="#" class="btn btn-primary w-100 mt-3">마이 페이지</a>
+					       	<a href="/post/myPage" class="btn btn-primary w-100 mt-3">마이 페이지</a>
 				       	</div>
 			       	</c:if>
 			       	

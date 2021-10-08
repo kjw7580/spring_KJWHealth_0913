@@ -26,4 +26,8 @@ public class DiagnosisResultBO {
 	public List<DiagnosisResult> getRecordDiagnosisResult(int userId) {
 		return diagnosisResultDAO.selectRecordDiagnosisResult(userId);
 	}
+	
+	public List<DiagnosisResult> getMypageDiagnosisResult(int userId) {
+		return diagnosisResultDAO.selectMyPageDiagnosisResult(userId);
+	}
 }

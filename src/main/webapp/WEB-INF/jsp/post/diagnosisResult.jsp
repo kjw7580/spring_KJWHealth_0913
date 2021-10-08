@@ -86,7 +86,9 @@
 				</div>
 				
 				<div class="text-right">
-					<a href="/post/recipe" class="btn btn-primary mt-3" id="recipeBtn">레시피 보러가기</a>
+					<c:forEach var="diagnosisResult" items="${diagnosisResult }" varStatus="status" end="0">
+						<a href="/post/detail_recipe?id=${diagnosisResult.id }" class="btn btn-primary mt-3" id="recipeBtn">레시피 보러가기</a>
+					</c:forEach>
 				</div>
 				
 				<div class="d-flex mt-3">
@@ -118,7 +120,9 @@
 				</div>
 				
 				<div class="text-right">
-					<a href="/post/health_products" class="btn btn-primary mt-3">모두 보러가기</a>
+					<c:forEach var="diagnosisResult" items="${diagnosisResult }" varStatus="status" end="0">
+						<a href="/post/detail_health_products?id=${diagnosisResult.id }" class="btn btn-primary mt-3">건강용품/식품 보러가기</a>
+					</c:forEach>
 				</div>
 			</div>
     	</div>
@@ -165,6 +169,7 @@
 					success:function(data) {
 						if(data.result == "success") {
 							alert("기록 성공");
+							location.reload();
 						} else {
 							alert("기록을 실패했습니다!");
 						}
