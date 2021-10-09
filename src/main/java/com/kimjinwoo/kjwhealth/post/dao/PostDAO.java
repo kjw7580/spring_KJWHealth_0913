@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.kimjinwoo.kjwhealth.post.model.Criteria;
 import com.kimjinwoo.kjwhealth.post.model.Post;
 
 @Repository
@@ -52,4 +53,39 @@ public interface PostDAO {
 	
 	public int deletePost(@Param("id") int id
 			, @Param("userId") int userId);
+	
+	public List<Post> listPaging(@Param("page") int page);
+	
+	public List<Post> listCriteria(Criteria criteria);
+	
+	public int countArticles(Criteria criteria);
+	
+	public int countSubject(Criteria criteria);
+	
+	public List<Post> searchSubject(Criteria criteria);
+	
+	public int countContent(Criteria criteria);
+	
+	public List<Post> searchContent(Criteria criteria);
+	
+	public int countCreatedAt(Criteria criteria);
+	
+	public List<Post> searchCreatedAt(Criteria criteria);
+	
+	public int countSubjectContent(Criteria criteria);
+	
+	public List<Post> searchSubjectContent(Criteria criteria);
+	
+	public int countSubjectCreatedAt(Criteria criteria);
+	
+	public List<Post> searchSubjectCreatedAt(Criteria criteria);
+	
+	public int countContentCreatedAt(Criteria criteria);
+	
+	public List<Post> searchContentCreatedAt(Criteria criteria);
+	
+	public int countAll(Criteria criteria);
+	
+	public List<Post> searchAll(Criteria criteria);
+
 }

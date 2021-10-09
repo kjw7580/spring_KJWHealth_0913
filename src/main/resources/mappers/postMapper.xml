@@ -37,6 +37,7 @@
  			, `updatedAt`
  		FROM
  			`post`
+ 		WHERE 1 = 1
 		<include refid="search" />
  		ORDER BY `id` DESC
  	</select>
@@ -237,9 +238,269 @@
  			AND `userId` = #{userId}
  	</delete>
  	
+ 	<select id="listPaging" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post"> 
+	 	 
+	 	SELECT 
+		 	`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+	 	FROM 
+	 		`post` 
+	 	<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	<include refid="search" />
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{page}, 10 
+	 	 
+ 	</select>
+ 	
+ 	<select id="listCriteria" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+	 	SELECT 
+	 		`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+	 	FROM 
+	 		`post`
+	 	<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	<include refid="search" />
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{pageStart}, #{perPageNum}
+ 	</select>
+ 	
+ 	<select id="countArticles" resultType="int"> 
+	 	SELECT COUNT(`id`) 
+	 	FROM `post`
+	 	<![CDATA[ 
+	 		WHERE `id` > 0 
+	 	]]> 
+ 	</select>
+ 	
+ 	<select id="countSubject" parameterType="map" resultType="int"> 
+	 	SELECT COUNT(`id`) 
+	 	FROM `post`
+	 	<![CDATA[ 
+	 		WHERE `id` > 0 
+	 	]]>
+	 	AND subject like concat('%', #{word}, '%')
+ 	</select>
+ 	
+ 	<select id="countContent" parameterType="map" resultType="int"> 
+	 	SELECT 
+	 	COUNT(`id`) 
+	 	FROM `post`
+	 	<![CDATA[ 
+	 		WHERE `id` > 0 
+	 	]]> 
+	 	AND content like concat('%', #{word}, '%')
+ 	</select>
+ 	
+ 	<select id="countCreatedAt" parameterType="map" resultType="int"> 
+	 	SELECT 
+	 	COUNT(`id`) 
+	 	FROM `post`
+	 	<![CDATA[ 
+	 		WHERE `id` > 0 
+	 	]]>
+	 	AND createdAt like concat('%', #{word}, '%')
+ 	</select>
+ 	
+ 	<select id="countSubjectContent" parameterType="map" resultType="int"> 
+	 	SELECT 
+	 	COUNT(`id`) 
+	 	FROM `post`
+	 	<![CDATA[ 
+	 		WHERE `id` > 0 
+	 	]]>
+	 	AND subject like concat('%', #{word}, '%')
+	 	OR content like concat('%', #{word}, '%')
+ 	</select>
+ 	
+ 	<select id="countSubjectCreatedAt" parameterType="map" resultType="int"> 
+	 	SELECT 
+	 	COUNT(`id`) 
+	 	FROM `post`
+	 	<![CDATA[ 
+	 		WHERE `id` > 0 
+	 	]]> 
+	 	AND subject like concat('%', #{word}, '%')
+	 	OR createdAt like concat('%', #{word}, '%')
+ 	</select>
+ 	
+ 	<select id="countContentCreatedAt" parameterType="map" resultType="int"> 
+	 	SELECT 
+	 	COUNT(`id`) 
+	 	FROM `post`
+	 	<![CDATA[ 
+	 		WHERE `id` > 0 
+	 	]]>
+	 	AND content like concat('%', #{word}, '%')
+	 	OR createdAt like concat('%', #{word}, '%')
+ 	</select>
+ 	
+ 	<select id="countAll" parameterType="map" resultType="int"> 
+	 	SELECT 
+	 	COUNT(`id`) 
+	 	FROM `post`
+	 	<![CDATA[ 
+	 		WHERE `id` > 0 
+	 	]]>
+	 	AND subject like concat('%', #{word}, '%')
+	 	OR content like concat('%', #{word}, '%')
+	 	OR createdAt like concat('%', #{word}, '%')
+ 	</select>
+ 	
+ 	<select id="searchSubject" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT 
+	 		`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+	 	FROM 
+	 		`post`
+		<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	AND subject like concat('%', #{word}, '%')
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{pageStart}, #{perPageNum}
+ 	</select>
+ 	
+ 	<select id="searchContent" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT 
+	 		`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+	 	FROM 
+	 		`post`
+		<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	AND content like concat('%', #{word}, '%')
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{pageStart}, #{perPageNum}
+ 	</select>
+ 	
+ 	<select id="searchCreatedAt" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT 
+	 		`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+	 	FROM 
+	 		`post`
+		<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	AND createdAt like concat('%', #{word}, '%')
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{pageStart}, #{perPageNum}
+ 	</select>
+ 	
+ 	<select id="searchSubjectContent" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT 
+	 		`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+	 	FROM 
+	 		`post`
+		<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	AND subject like concat('%', #{word}, '%')
+	 	OR content like concat('%', #{word}, '%')
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{pageStart}, #{perPageNum}
+ 	</select>
+ 	
+ 	<select id="searchSubjectCreatedAt" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT 
+	 		`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+	 	FROM 
+	 		`post`
+		<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	AND subject like concat('%', #{word}, '%')
+	 	OR createdAt like concat('%', #{word}, '%')
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{pageStart}, #{perPageNum}
+ 	</select>
+ 	
+ 	<select id="searchContentCreatedAt" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT 
+	 		`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+	 	FROM 
+	 		`post`
+		<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	AND content like concat('%', #{word}, '%')
+	 	OR createdAt like concat('%', #{word}, '%')
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{pageStart}, #{perPageNum}
+ 	</select>
+ 	
+ 	<select id="searchAll" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
+ 		SELECT 
+	 		`id`
+			, `userId`
+			, `subject`
+			, `content`
+			, `imagePath`
+			, `createdAt`
+			, `updatedAt`
+	 	FROM 
+	 		`post`
+		<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	AND subject like concat('%', #{word}, '%')
+	 	OR content like concat('%', #{word}, '%')
+	 	OR createdAt like concat('%', #{word}, '%')
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{pageStart}, #{perPageNum}
+ 	</select>
+ 	
  	<sql id="search">
  		<if test="word != null and word !=''.toString()">
- 			WHERE ( 2 = 1
+ 			OR ( 2 = 1
  				<if test="key == 'subject'.toString()">
  					OR subject like concat('%', #{word}, '%')
  				</if>
@@ -269,5 +530,38 @@
  			)
  		</if>
  	</sql>
+ 	
+ 	<!-- <sql id="search">
+ 		<if test="word != null and word !=''.toString()">
+ 			OR ( 2 = 1
+ 				<if test="key == 'subject'.toString()">
+ 					OR subject like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'content'.toString()">
+ 					OR content like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'createdAt'.toString()">
+ 					OR createdAt like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'subjectContent'.toString()">
+ 					OR subject like concat('%', #{word}, '%')
+ 					OR content like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'subjectCreatedAt'.toString()">
+ 					OR subject like concat('%', #{word}, '%')
+ 					OR createdAt like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'contentCreatedAt'.toString()">
+ 					OR content like concat('%', #{word}, '%')
+ 					OR createdAt like concat('%', #{word}, '%')
+ 				</if>
+ 				<if test="key == 'all'.toString()">
+ 					OR subject like concat('%', #{word}, '%')
+ 					OR content like concat('%', #{word}, '%')
+ 					OR createdAt like concat('%', #{word}, '%')
+ 				</if>
+ 			)
+ 		</if>
+ 	</sql> -->
 
  </mapper>

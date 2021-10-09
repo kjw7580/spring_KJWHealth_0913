@@ -12,6 +12,7 @@ import com.kimjinwoo.kjwhealth.common.FileManagerService;
 import com.kimjinwoo.kjwhealth.post.comment.bo.CommentBO;
 import com.kimjinwoo.kjwhealth.post.comment.model.Comment;
 import com.kimjinwoo.kjwhealth.post.dao.PostDAO;
+import com.kimjinwoo.kjwhealth.post.model.Criteria;
 import com.kimjinwoo.kjwhealth.post.model.Post;
 import com.kimjinwoo.kjwhealth.post.model.PostWithComments;
 
@@ -111,5 +112,73 @@ public class PostBO {
 	
 	public int deleteHealth(int id, int userId) {
 		return postDAO.deletePost(id, userId);
+	}
+	
+	public List<Post> listPaging(int page) throws Exception { 
+		return postDAO.listPaging(page);
+	}
+	
+	public List<Post> listCriteria(Criteria criteria) throws Exception { 
+		return postDAO.listCriteria(criteria);
+	}
+	
+	public int countArticles(Criteria criteria) throws Exception { 
+		return postDAO.countArticles(criteria);
+	}
+	
+	public int countSubject(Criteria criteria) {
+		return postDAO.countSubject(criteria);
+	}
+	
+	public List<Post> searchSubject(Criteria criteria) {
+		return postDAO.searchSubject(criteria);
+	}
+	
+	public int countContent(Criteria criteria) {
+		return postDAO.countContent(criteria);
+	}
+	
+	public List<Post> searchContent(Criteria criteria) {
+		return postDAO.searchContent(criteria);
+	}
+	
+	public int countCreatedAt(Criteria criteria) {
+		return postDAO.countCreatedAt(criteria);
+	}
+	
+	public List<Post> searchCreatedAt(Criteria criteria) {
+		return postDAO.searchCreatedAt(criteria);
+	}
+	
+	public int countSubjectContent(Criteria criteria) {
+		return postDAO.countSubjectContent(criteria);
+	}
+	
+	public List<Post> searchSubjectContent(Criteria criteria) {
+		return postDAO.searchSubjectContent(criteria);
+	}
+	
+	public int countSubjectCreatedAt(Criteria criteria) {
+		return postDAO.countSubjectCreatedAt(criteria);
+	}
+	
+	public List<Post> searchSubjectCreatedAt(Criteria criteria) {
+		return postDAO.searchSubjectCreatedAt(criteria);
+	}
+	
+	public int countContentCreatedAt(Criteria criteria) {
+		return postDAO.countContentCreatedAt(criteria);
+	}
+	
+	public List<Post> searchContentCreatedAt(Criteria criteria) {
+		return postDAO.searchContentCreatedAt(criteria);
+	}
+	
+	public int countAll(Criteria criteria) {
+		return postDAO.countAll(criteria);
+	}
+	
+	public List<Post> searchAll(Criteria criteria) {
+		return postDAO.searchAll(criteria);
 	}
 }
