@@ -127,7 +127,7 @@
  			`id` = #{id}
  		ORDER BY `id` DESC
  	</select>
- 	
+ 	<!-- 
  	<select id="selectHealthListByNextId" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
  		SELECT
  			`id`
@@ -203,7 +203,7 @@
  		ORDER BY `id` DESC
  		LIMIT 1
  	</select>
- 	
+ 	-->
  	<select id="selectHealth" parameterType="map" resultType="com.kimjinwoo.kjwhealth.post.model.Post">
  		SELECT
  			`id`
@@ -255,7 +255,7 @@
 	 	]]> 
 	 	<include refid="search" />
 	 	ORDER BY `id` DESC, `createdAt` DESC 
-	 	LIMIT #{page}, 10 
+	 	LIMIT #{page}, 10
 	 	 
  	</select>
  	

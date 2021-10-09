@@ -73,9 +73,13 @@
 					<div class="d-flex justify-content-between mt-5">
 						<div>
 							<a href="/post/list_view" class="btn btn-info">목록으로</a>
-							<button type="button" class="btn btn-danger" id="deleteBtn" data-post-id="${postWithComments.post.id}">삭제</button>
+							<c:if test="${postWithComments.post.userId eq userId }">
+								<button type="button" class="btn btn-danger" id="deleteBtn" data-post-id="${postWithComments.post.id}">삭제</button>
+							</c:if>
 						</div>
-						<button type="button" class="btn btn-success" id="updateBtn" data-post-id="${postWithComments.post.id}">수정</button>
+						<c:if test="${postWithComments.post.userId eq userId }">
+							<button type="button" class="btn btn-success" id="updateBtn" data-post-id="${postWithComments.post.id}">수정</button>
+						</c:if>
 					</div>
 				</div>
 			</c:forEach>

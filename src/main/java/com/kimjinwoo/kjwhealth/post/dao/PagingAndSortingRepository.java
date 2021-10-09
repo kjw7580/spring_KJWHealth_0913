@@ -1,5 +1,5 @@
-package com.kimjinwoo.kjwhealth.post.dao;
-
+//package com.kimjinwoo.kjwhealth.post.dao;
+//
 //import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 //import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Sort;
 //
