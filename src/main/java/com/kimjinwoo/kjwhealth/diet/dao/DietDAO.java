@@ -5,6 +5,7 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+import com.kimjinwoo.kjwhealth.diet.model.Criteria;
 import com.kimjinwoo.kjwhealth.diet.model.Diet;
 
 @Repository
@@ -20,4 +21,10 @@ public interface DietDAO {
 	public List<Diet> selectDiet();
 	
 	public Diet selectDietById(@Param("id") int id);
+	
+	public List<Diet> listPaging(@Param("page") int page);
+	
+	public List<Diet> listCriteria(Criteria criteria);
+	
+	public int countArticles(Criteria criteria);
 }

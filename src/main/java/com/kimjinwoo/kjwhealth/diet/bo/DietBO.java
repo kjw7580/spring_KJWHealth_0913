@@ -8,6 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.kimjinwoo.kjwhealth.common.FileManagerService;
 import com.kimjinwoo.kjwhealth.diet.dao.DietDAO;
+import com.kimjinwoo.kjwhealth.diet.model.Criteria;
 import com.kimjinwoo.kjwhealth.diet.model.Diet;
 
 @Service
@@ -38,5 +39,17 @@ public class DietBO {
 	
 	public Diet getDietById(int id) {
 		return dietDAO.selectDietById(id);
+	}
+	
+	public List<Diet> listPaging(int page) throws Exception { 
+		return dietDAO.listPaging(page);
+	}
+	
+	public List<Diet> listCriteria(Criteria criteria) throws Exception { 
+		return dietDAO.listCriteria(criteria);
+	}
+	
+	public int countArticles(Criteria criteria) throws Exception { 
+		return dietDAO.countArticles(criteria);
 	}
 }

@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.kimjinwoo.kjwhealth.diagnosisResult.bo.DiagnosisResultBO;
 import com.kimjinwoo.kjwhealth.diagnosisResult.model.DiagnosisResult;
 import com.kimjinwoo.kjwhealth.diet.bo.DietBO;
+import com.kimjinwoo.kjwhealth.diet.model.Criteria;
 import com.kimjinwoo.kjwhealth.diet.model.Diet;
+import com.kimjinwoo.kjwhealth.diet.model.PageMaker;
 
 @Controller
 @RequestMapping("/post")
@@ -34,13 +36,41 @@ public class DietController {
 	}
 
 	@GetMapping("/recipe")
-	public String recipeView(Model model) {
+	public String recipeView(Model model
+			, Criteria criteria) throws Exception {
 
 		List<Diet> diet = dietBO.getDiet();
 		
 		model.addAttribute("diet", diet);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(dietBO.countArticles(criteria));
+		
+		
+		model.addAttribute("articles", dietBO.listCriteria(criteria)); 
+		model.addAttribute("pageMaker", pageMaker); 
+		
 		return "post/recipe";
+	}
+	
+	@GetMapping("/recipe_list_paging")
+	public String recipeListPagingView(Model model
+			, Criteria criteria) throws Exception {
+		
+		List<Diet> diet = dietBO.getDiet();
+		
+		model.addAttribute("diet", diet);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(dietBO.countArticles(criteria));
+		
+		
+		model.addAttribute("articles", dietBO.listCriteria(criteria)); 
+		model.addAttribute("pageMaker", pageMaker); 
+		
+		return "post/recipeListPaging";
 	}
 	
 	@GetMapping("/detail_recipe")
