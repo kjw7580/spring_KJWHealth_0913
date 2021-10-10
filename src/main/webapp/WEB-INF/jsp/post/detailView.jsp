@@ -63,7 +63,7 @@
 								<div>${comment.content }</div>
 							</div>
 							<c:if test="${comment.userId eq userId }">
-								<button type="button" class="btn btn-danger deleteBtn" data-comment-id="${comment.id }">삭제</button>
+								<button type="button" class="btn btn-danger deleteCommentBtn" data-comment-id="${comment.id }">삭제</button>
 							</c:if>
 						</c:if>
 					</c:forEach>
@@ -115,7 +115,6 @@
 				});
 			});
 			
-			/*
 			$("#deleteBtn").on("click", function() {
 				var postId = $(this).data("post-id");
 				
@@ -135,7 +134,6 @@
 					}
 				});
 			});
-			*/
 			
 			$(".commentBtn").on("click", function() {
 				var postId = $(this).data("post-id");
@@ -164,7 +162,7 @@
 				});
 			});
 			
-			$(".deleteBtn").on("click",function(){
+			$(".deleteCommentBtn").on("click",function(){
 				
 				var id = $(this).data("comment-id");	
 				
