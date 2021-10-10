@@ -34,9 +34,7 @@
 			<c:forEach var="diagnosisResult" items="${articles }" varStatus="status">
 				<h2 class="mt-5 font-weight-bold">
 					기록된 Date : <fmt:formatDate value="${diagnosisResult.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" />
-					<c:if test="${diagnosisResult.userId eq userId}">
-						<button type="button" class="btn btn-danger deleteBtn ml-2 mb-2" data-record-id="${diagnosisResult.id }">삭제</button>
-					</c:if>
+					<button type="button" class="btn btn-danger deleteBtn ml-2 mb-2" data-record-id="${diagnosisResult.id }">삭제</button>
 				</h2>
 				<h3><a href="/post/detail_record?id=${diagnosisResult.id }" class="btn btn-outline-primary">진단결과 보러가기</a></h3>
 				<h3><a href="/post/detail_recipe?id=${diagnosisResult.id }" class="btn btn-outline-success">레시피 보러가기</a></h3>

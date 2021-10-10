@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.kimjinwoo.kjwhealth.common.FileManagerService;
+import com.kimjinwoo.kjwhealth.diagnosisResult.model.DiagnosisResult;
 import com.kimjinwoo.kjwhealth.post.comment.bo.CommentBO;
 import com.kimjinwoo.kjwhealth.post.comment.model.Comment;
 import com.kimjinwoo.kjwhealth.post.dao.PostDAO;
@@ -124,6 +125,18 @@ public class PostBO {
 	
 	public int countArticles(Criteria criteria) throws Exception { 
 		return postDAO.countArticles(criteria);
+	}
+	
+	public List<Post> myListPaging(int page) throws Exception { 
+		return postDAO.myListPaging(page);
+	}
+	
+	public List<Post> myListCriteria(Criteria criteria) throws Exception { 
+		return postDAO.myListCriteria(criteria);
+	}
+	
+	public int myCountArticles(Criteria criteria) throws Exception { 
+		return postDAO.myCountArticles(criteria);
 	}
 	
 	public int countSubject(Criteria criteria) {

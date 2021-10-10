@@ -60,6 +60,12 @@ public interface PostDAO {
 	
 	public int countArticles(Criteria criteria);
 	
+	public List<Post> myListPaging(@Param("page") int page);
+	
+	public List<Post> myListCriteria(Criteria criteria);
+	
+	public int myCountArticles(Criteria criteria);
+	
 	public int countSubject(Criteria criteria);
 	
 	public List<Post> searchSubject(Criteria criteria);

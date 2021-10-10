@@ -66,6 +66,19 @@ public class RecordController {
 		
 		model.addAttribute("diagnosisResult", diagnosisResult);
 		
+//		List<DiagnosisResult> articles = diagnosisResultBO.listCriteria(criteria);
+//		int totalCount = 0;
+//		for(DiagnosisResult article : articles) {
+//			
+//			if(article.getUserId() == userId) {
+//				System.out.println(userId);
+//				articles = diagnosisResultBO.listCriteria(criteria);
+//				totalCount = diagnosisResultBO.countArticles(criteria);
+//			}
+//		}
+		
+		criteria.setUserId(userId);
+		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCriteria(criteria);
 		pageMaker.setTotalCount(diagnosisResultBO.countArticles(criteria));
@@ -98,6 +111,8 @@ public class RecordController {
 		List<DiagnosisResult> diagnosisResult = diagnosisResultBO.getRecordDiagnosisResult(userId);
 		
 		model.addAttribute("diagnosisResult", diagnosisResult);
+		
+		criteria.setUserId(userId);
 		
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCriteria(criteria);

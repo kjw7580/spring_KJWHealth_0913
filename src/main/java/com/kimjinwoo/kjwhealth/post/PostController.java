@@ -121,7 +121,8 @@ public class PostController {
 	
 	@GetMapping("/myList_view")
 	public String myListView(Model model
-			, HttpServletRequest request) {
+			, Criteria criteria
+			, HttpServletRequest request) throws Exception {
 		
 		HttpSession session = request.getSession();
 		
@@ -131,7 +132,44 @@ public class PostController {
 		
 		model.addAttribute("myHealthList", myHealthList);
 		
+		criteria.setUserId(userId);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(postBO.myCountArticles(criteria));
+		
+		
+		model.addAttribute("articles", postBO.myListCriteria(criteria));
+		model.addAttribute("pageMaker", pageMaker); 
+		
 		return "post/myListView";
+		
+	}
+	
+	@GetMapping("/myList_paging")
+	public String myListPagingView(Model model
+			, Criteria criteria
+			, HttpServletRequest request) throws Exception {
+		
+		HttpSession session = request.getSession();
+		
+		int userId = (Integer)session.getAttribute("userId");
+		
+		List<Post> myHealthList = postBO.getMyHealthList(userId);
+		
+		model.addAttribute("myHealthList", myHealthList);
+		
+		criteria.setUserId(userId);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(postBO.myCountArticles(criteria));
+		
+		
+		model.addAttribute("articles", postBO.myListCriteria(criteria));
+		model.addAttribute("pageMaker", pageMaker); 
+		
+		return "post/myListPaging";
 		
 	}
 	

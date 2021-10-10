@@ -5,6 +5,16 @@ public class Criteria {
 	private int page; 
 	private int perPageNum;
 	
+	private int userId;
+	
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
 	private String key;
 	private String word;
 	

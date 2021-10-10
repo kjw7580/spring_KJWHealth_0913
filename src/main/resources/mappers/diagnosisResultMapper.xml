@@ -97,7 +97,9 @@
  		FROM
  			`diagnosisResult`
 	 	<![CDATA[ 
-	 	WHERE `id` > 0
+	 	WHERE 
+	 		`id` > 0
+	 		AND `userId` = #{userId}
 	 	]]> 
 	 	ORDER BY `id` DESC, `createdAt` DESC 
 	 	LIMIT #{page}, 3
@@ -116,7 +118,9 @@
  		FROM
  			`diagnosisResult`
 	 	<![CDATA[ 
-	 	WHERE `id` > 0
+	 	WHERE 
+	 		`id` > 0
+	 		AND `userId` = #{userId}
 	 	]]> 
 	 	ORDER BY `id` DESC, `createdAt` DESC 
 	 	LIMIT #{pageStart}, #{perPageNum}
@@ -126,7 +130,9 @@
 	 	SELECT COUNT(`id`) 
 	 	FROM `diagnosisResult`
 	 	<![CDATA[ 
-	 		WHERE `id` > 0 
+	 	WHERE 
+	 		`id` > 0 
+	 		AND `userId` = #{userId}
 	 	]]> 
  	</select>
  </mapper>
