@@ -3,7 +3,7 @@ package com.kimjinwoo.kjwhealth.diagnosisResult.model;
 public class Criteria {
 	
 	private int page; 
-	private int perPageNum; 
+	private int perPageNum;
 	
 	private String key;
 	private String word;
