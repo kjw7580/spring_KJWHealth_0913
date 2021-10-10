@@ -19,7 +19,10 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
 		<div class="d-flex justify-content-between align-items-center">
-			<h1 class="font-weight-bold mt-2">건강용품/식품</h1>
+			<blockquote class="blockquote mt-3">
+				<h1><p class="mb-0">건강용품/식품</p></h1>
+				<footer class="blockquote-footer">KJW Health <cite title="Source Title">Health Products</cite></footer>
+			</blockquote>
 			<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
 		</div>
 		

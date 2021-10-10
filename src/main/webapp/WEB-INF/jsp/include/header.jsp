@@ -15,13 +15,13 @@
 	<c:choose>
 		<c:when test="${userId eq 2 }">
 			<div class="mr-4 d-flex">
-				<div>${userName }님 <a href="/user/sign_out">로그아웃</a></div>
+				<div><i class="bi bi-person-fill"></i> ${userName }님 <a href="/user/sign_out">로그아웃</a></div>
 				<a href="/admin/main" class="text-dark ml-2"><i class="bi bi-gear"></i></a>
 			</div>
 		</c:when>
 		
 		<c:when test="${not empty userName }">
-			<div class="mr-4"> ${userName }님 <a href="/user/sign_out">로그아웃</a></div>
+			<div class="mr-4"><i class="bi bi-person-fill"></i> ${userName }님 <a href="/user/sign_out">로그아웃</a></div>
 		</c:when>
 		
 	</c:choose>

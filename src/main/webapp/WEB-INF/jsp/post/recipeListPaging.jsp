@@ -19,22 +19,11 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
 		<div class="d-flex justify-content-between align-items-center">
-			<nav class="navbar navbar-light mt-3">
-				<a class="navbar-brand" href="#">
-					<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="50" height="50" class="d-inline-block align-top" alt="">
-				</a>
-				<h1 class="font-weight-bold">식단 레시피</h1>
-			</nav>
+			<blockquote class="blockquote mt-3">
+				<h1><p class="mb-0">식단 레시피</p></h1>
+				<footer class="blockquote-footer">KJW Health <cite title="Source Title">Recipe</cite></footer>
+			</blockquote>
 			<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
-		</div>
-		
-		<div class="d-flex">
-			<nav class="navbar navbar-light mt-3">
-				<a class="navbar-brand" href="#">
-					<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
-				</a>
-				<h2 class="font-weight-bold mt-2">식단</h2>
-			</nav>
 		</div>
 		
 		<c:forEach var="diet" items="${articles }" varStatus="status">

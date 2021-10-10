@@ -19,14 +19,20 @@
 	<div id="wrap">
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		<div class="d-flex justify-content-between align-items-center">
-			<h1 class="font-weight-bold mt-2">마이 페이지</h1>
+			<blockquote class="blockquote mt-3">
+				<h3><p class="mb-0">마이 페이지</p></h3>
+				<footer class="blockquote-footer">KJW Health <cite title="Source Title">My Page</cite></footer>
+			</blockquote>
 			<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
 		</div>
 		<div class="mt-3">
 			<div>
 				<div class="d-flex justify-content-between">
-					<h3>내가 쓴 게시물</h3>
-					<a href="/post/myList_view"><i class="bi bi-bookmark-heart"></i> 내가 쓴 게시물 모두 보러가기</a>
+					<blockquote class="blockquote mt-3">
+						<h3><p class="mb-0">나의 최근 5개 게시물</p></h3>
+						<footer class="blockquote-footer">KJW Health <cite title="Source Title">My Post</cite></footer>
+					</blockquote>
+					<a href="/post/myList_view" class="mt-5"><i class="bi bi-bookmark-heart"></i> 내가 쓴 게시물 모두 보러가기</a>
 				</div>
 				<table class="table text-center table-striped">
 					<thead class="thead-dark">
@@ -54,17 +60,31 @@
 			
 			<div class="text-center">
 				<div class="d-flex justify-content-between">
-					<h3>내가 기록한 진단결과</h3>
-					<a href="/post/record"><i class="bi bi-bookmark-heart-fill"></i> 내가 기록한 진단결과 모두 보러가기</a>
+					<blockquote class="blockquote mt-3">
+						<h3><p class="mb-0">나의 최근 3개 진단결과</p></h3>
+						<footer class="blockquote-footer">KJW Health <cite title="Source Title">My DiagnosisResult</cite></footer>
+					</blockquote>
+					<a href="/post/record" class="mt-5"><i class="bi bi-bookmark-heart-fill"></i> 내가 기록한 진단결과 모두 보러가기</a>
 				</div>
 				<c:forEach var="diagnosisResult" items="${myPageDiagnosisResult }" varStatus="status">
 					<h2 class="mt-5 font-weight-bold">
-						<fmt:formatDate value="${diagnosisResult.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" />
+						기록된 Date : <fmt:formatDate value="${diagnosisResult.createdAt }" pattern="yyyy-MM-dd HH:mm:ss" />
 					</h2>
-					<h3><a href="/post/detail_record?id=${diagnosisResult.id }">보러가기</a></h3>
+					<div class="btn-group" role="group">
+						<button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+							자세히 보기
+						</button>
+						<div class="dropdown-menu">
+							<a class="dropdown-item" href="/post/detail_record?id=${diagnosisResult.id }">진단결과 보러가기</a>
+							<a class="dropdown-item" href="/post/detail_recipe?id=${diagnosisResult.id }">레시피 보러가기</a>
+							<a class="dropdown-item" href="/post/detail_health_products?id=${diagnosisResult.id }">건강용품/식품 보러가기</a>
+						</div>
+					</div>
+					<!--<h3><a href="/post/detail_record?id=${diagnosisResult.id }">보러가기</a></h3>-->
 				</c:forEach>
 			</div>
 		</div>
+		<hr>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>
 </body>

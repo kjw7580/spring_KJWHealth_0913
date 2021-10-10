@@ -19,7 +19,10 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
 		<div class="d-flex justify-content-between align-items-center">
-			<h1 class="font-weight-bold mt-2">게시글 상세 페이지</h1>
+			<blockquote class="blockquote mt-3">
+				<h1><p class="mb-0">게시글 상세 페이지</p></h1>
+				<footer class="blockquote-footer">KJW Health <cite title="Source Title">Detail Post</cite></footer>
+			</blockquote>
 			<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
 		</div>
 		

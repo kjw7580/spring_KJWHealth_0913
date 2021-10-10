@@ -74,7 +74,7 @@
  		WHERE
  			`userId` = #{userId}
  		ORDER BY `id` DESC
- 		LIMIT 5
+ 		LIMIT 3
  	</select>
  	
  	<delete id="deleteRecordById" parameterType="map">
