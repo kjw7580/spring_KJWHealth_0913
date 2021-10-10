@@ -83,4 +83,50 @@
  		WHERE
  			`id` = #{id}
  	</delete>
+ 	
+ 	<select id="listPaging" parameterType="map" resultType="com.kimjinwoo.kjwhealth.diagnosisResult.model.DiagnosisResult"> 
+	 	 
+	 	SELECT
+ 			`id`
+ 			, `userId`
+ 			, `selfDiagnosisId`
+ 			, `dietId`
+ 			, `healthProductsId`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`diagnosisResult`
+	 	<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{page}, 3
+
+ 	</select>
+ 	
+ 	<select id="listCriteria" parameterType="map" resultType="com.kimjinwoo.kjwhealth.diagnosisResult.model.DiagnosisResult">
+	 	SELECT
+ 			`id`
+ 			, `userId`
+ 			, `selfDiagnosisId`
+ 			, `dietId`
+ 			, `healthProductsId`
+ 			, `createdAt`
+ 			, `updatedAt`
+ 		FROM
+ 			`diagnosisResult`
+	 	<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{pageStart}, #{perPageNum}
+ 	</select>
+ 	
+ 	<select id="countArticles" resultType="int"> 
+	 	SELECT COUNT(`id`) 
+	 	FROM `diagnosisResult`
+	 	<![CDATA[ 
+	 		WHERE `id` > 0 
+	 	]]> 
+ 	</select>
  </mapper>

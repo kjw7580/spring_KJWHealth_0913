@@ -14,7 +14,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kimjinwoo.kjwhealth.diagnosisResult.bo.DiagnosisResultBO;
+import com.kimjinwoo.kjwhealth.diagnosisResult.model.Criteria;
 import com.kimjinwoo.kjwhealth.diagnosisResult.model.DiagnosisResult;
+import com.kimjinwoo.kjwhealth.diagnosisResult.model.PageMaker;
 import com.kimjinwoo.kjwhealth.diet.bo.DietBO;
 import com.kimjinwoo.kjwhealth.diet.model.Diet;
 import com.kimjinwoo.kjwhealth.healthProducts.bo.HealthProductsBO;
@@ -44,8 +46,9 @@ public class RecordController {
 
 	@GetMapping("/record")
 	public String recordView(Model model
+			, Criteria criteria
 //			, @RequestParam("id") int id
-			, HttpServletRequest request) {
+			, HttpServletRequest request) throws Exception {
 		
 		HttpSession session = request.getSession();
 		
@@ -63,7 +66,48 @@ public class RecordController {
 		
 		model.addAttribute("diagnosisResult", diagnosisResult);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(diagnosisResultBO.countArticles(criteria));
+		
+		
+		model.addAttribute("articles", diagnosisResultBO.listCriteria(criteria));
+		model.addAttribute("pageMaker", pageMaker); 
+		
 		return "post/record";
+	}
+	
+	@GetMapping("/record_list_paging")
+	public String recordListPagingView(Model model
+			, Criteria criteria
+//			, @RequestParam("id") int id
+			, HttpServletRequest request) throws Exception {
+		
+		HttpSession session = request.getSession();
+		
+		int userId = (Integer)session.getAttribute("userId");
+		
+		List<Record> record = recordBO.getRecord();
+		
+		model.addAttribute("record", record);
+		
+		List<SelfDiagnosis> selfDiagnosis = selfDiagnosisBO.getSelfDiagnosis();
+		
+		model.addAttribute("selfDiagnosis", selfDiagnosis);
+		
+		List<DiagnosisResult> diagnosisResult = diagnosisResultBO.getRecordDiagnosisResult(userId);
+		
+		model.addAttribute("diagnosisResult", diagnosisResult);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(diagnosisResultBO.countArticles(criteria));
+		
+		
+		model.addAttribute("articles", diagnosisResultBO.listCriteria(criteria));
+		model.addAttribute("pageMaker", pageMaker); 
+		
+		return "post/recordListPaging";
 	}
 	
 	@GetMapping("/detail_record")

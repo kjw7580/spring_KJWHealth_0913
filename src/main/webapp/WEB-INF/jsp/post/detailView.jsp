@@ -58,13 +58,17 @@
 					<hr>
 					<c:forEach var="comment" items="${postWithComments.commentList }" varStatus="status">
 						<c:if test="${postWithComments.post.id eq comment.postId }">
-							<div class="d-flex">
-								<div class="font-weight-bold mr-2">${comment.userName }</div>
-								<div>${comment.content }</div>
+							<div class="d-flex justify-content-between">
+								<div class="d-flex">
+									<div class="font-weight-bold mr-2">${comment.userName }</div>
+									<div>${comment.content }</div>
+								</div>
+								<c:if test="${comment.userId eq userId }">
+									<div>
+										<button type="button" class="btn btn-sm btn-outline-danger deleteCommentBtn" data-comment-id="${comment.id }">삭제</button>
+									</div>
+								</c:if>
 							</div>
-							<c:if test="${comment.userId eq userId }">
-								<button type="button" class="btn btn-danger deleteCommentBtn" data-comment-id="${comment.id }">삭제</button>
-							</c:if>
 						</c:if>
 					</c:forEach>
 					

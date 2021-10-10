@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.kimjinwoo.kjwhealth.diagnosisResult.dao.DiagnosisResultDAO;
+import com.kimjinwoo.kjwhealth.diagnosisResult.model.Criteria;
 import com.kimjinwoo.kjwhealth.diagnosisResult.model.DiagnosisResult;
 
 @Service
@@ -33,5 +34,17 @@ public class DiagnosisResultBO {
 	
 	public int deleteRecordById(int id) {
 		return diagnosisResultDAO.deleteRecordById(id);
+	}
+	
+	public List<DiagnosisResult> listPaging(int page) throws Exception { 
+		return diagnosisResultDAO.listPaging(page);
+	}
+	
+	public List<DiagnosisResult> listCriteria(Criteria criteria) throws Exception { 
+		return diagnosisResultDAO.listCriteria(criteria);
+	}
+	
+	public int countArticles(Criteria criteria) throws Exception { 
+		return diagnosisResultDAO.countArticles(criteria);
 	}
 }
