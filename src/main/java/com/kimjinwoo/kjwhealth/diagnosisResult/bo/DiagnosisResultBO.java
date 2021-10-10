@@ -30,4 +30,8 @@ public class DiagnosisResultBO {
 	public List<DiagnosisResult> getMypageDiagnosisResult(int userId) {
 		return diagnosisResultDAO.selectMyPageDiagnosisResult(userId);
 	}
+	
+	public int deleteRecordById(int id) {
+		return diagnosisResultDAO.deleteRecordById(id);
+	}
 }

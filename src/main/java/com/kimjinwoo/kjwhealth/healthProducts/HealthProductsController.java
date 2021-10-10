@@ -16,7 +16,9 @@ import org.springframework.web.bind.annotation.RequestParam;
 import com.kimjinwoo.kjwhealth.diagnosisResult.bo.DiagnosisResultBO;
 import com.kimjinwoo.kjwhealth.diagnosisResult.model.DiagnosisResult;
 import com.kimjinwoo.kjwhealth.healthProducts.bo.HealthProductsBO;
+import com.kimjinwoo.kjwhealth.healthProducts.model.Criteria;
 import com.kimjinwoo.kjwhealth.healthProducts.model.HealthProducts;
+import com.kimjinwoo.kjwhealth.healthProducts.model.PageMaker;
 
 @Controller
 @RequestMapping("/post")
@@ -34,13 +36,41 @@ public class HealthProductsController {
 	}
 	
 	@GetMapping("/health_products")
-	public String healthProductsView(Model model) {
+	public String healthProductsView(Model model
+			, Criteria criteria) throws Exception {
 		
 		List<HealthProducts> healthProducts = healthProductsBO.getHealthProducts();
 		
 		model.addAttribute("healthProducts", healthProducts);
 		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCriteria(criteria);
+		pageMaker.setTotalCount(healthProductsBO.countArticles(criteria));
+		
+		
+		model.addAttribute("articles", healthProductsBO.listCriteria(criteria)); 
+		model.addAttribute("pageMaker", pageMaker); 
+		
 		return "post/healthProducts";
+	}
+	
+	@GetMapping("/health_products_list_paging")
+	public String healthProductsListPagingView(Model model
+			, Criteria criteria) throws Exception {
+		
+		List<HealthProducts> healthProducts = healthProductsBO.getHealthProducts();
+		
+		model.addAttribute("healthProducts", healthProducts);
+		
+		PageMaker pageMaker = new PageMaker();
+		pageMaker.setCriteria(criteria); 
+		pageMaker.setTotalCount(healthProductsBO.countArticles(criteria));
+		
+		
+		model.addAttribute("articles", healthProductsBO.listCriteria(criteria)); 
+		model.addAttribute("pageMaker", pageMaker); 
+		
+		return "post/healthProductsListPaging";
 	}
 	
 	@GetMapping("/detail_health_products")

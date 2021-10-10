@@ -36,6 +36,7 @@
 				<h3><a href="/post/detail_record?id=${diagnosisResult.id }" class="btn btn-outline-primary">진단결과 보러가기</a></h3>
 				<h3><a href="/post/detail_recipe?id=${diagnosisResult.id }" class="btn btn-outline-success">레시피 보러가기</a></h3>
 				<h3><a href="/post/detail_health_products?id=${diagnosisResult.id }" class="btn btn-outline-info">건강용품/식품 보러가기</a></h3>
+				<button type="button" class="btn btn-danger deleteBtn" data-record-id="${diagnosisResult.id }">삭제</button>
 				<!-- 
 				<c:forEach var="selfDiagnosis" items="${selfDiagnosis }" varStatus="status">
 				</c:forEach>
@@ -46,4 +47,33 @@
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>
 </body>
+	<script>
+		$(document).ready(function(){
+			
+			$(".deleteBtn").on("click",function(){
+				
+				var id = $(this).data("record-id");
+				
+				
+				$.ajax({
+					type:"get",
+					url:"/post/record/delete",
+					data:{"id":id},
+					success:function(data){
+						if(data.result == "success"){
+							alert("기록 삭제 성공");
+							location.reload();
+						}else{
+							alert("기록 삭제 실패");
+						}
+					},
+					error:function(e){
+						alert("error");
+					}
+					
+				});
+			});
+			
+		});
+	</script>
 </html>

@@ -114,7 +114,7 @@ public class PostController {
 		
 //		model.addAttribute("articles", postBO.listCriteria(criteria)); 
 		model.addAttribute("articles", articles); 
-		model.addAttribute("pageMaker", pageMaker); 
+		model.addAttribute("pageMaker", pageMaker);
 		
 		return "post/listView";
 	}

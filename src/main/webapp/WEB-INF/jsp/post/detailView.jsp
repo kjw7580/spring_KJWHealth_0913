@@ -62,6 +62,9 @@
 								<div class="font-weight-bold mr-2">${comment.userName }</div>
 								<div>${comment.content }</div>
 							</div>
+							<c:if test="${comment.userId eq userId }">
+								<button type="button" class="btn btn-danger deleteBtn" data-comment-id="${comment.id }">삭제</button>
+							</c:if>
 						</c:if>
 					</c:forEach>
 					
@@ -112,6 +115,7 @@
 				});
 			});
 			
+			/*
 			$("#deleteBtn").on("click", function() {
 				var postId = $(this).data("post-id");
 				
@@ -131,6 +135,7 @@
 					}
 				});
 			});
+			*/
 			
 			$(".commentBtn").on("click", function() {
 				var postId = $(this).data("post-id");
@@ -153,6 +158,29 @@
 						}
 					},
 					error(e) {
+						alert("error");
+					}
+					
+				});
+			});
+			
+			$(".deleteBtn").on("click",function(){
+				
+				var id = $(this).data("comment-id");	
+				
+				$.ajax({
+					type:"get",
+					url:"/post/comment/delete",
+					data:{"id":id},
+					success:function(data){
+						if(data.result == "success"){
+							alert("댓글 삭제 성공");
+							location.reload();
+						}else{
+							alert("댓글 삭제 실패");
+						}
+					},
+					error:function(e){
 						alert("error");
 					}
 					

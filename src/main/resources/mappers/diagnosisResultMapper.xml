@@ -76,4 +76,11 @@
  		ORDER BY `id` DESC
  		LIMIT 5
  	</select>
+ 	
+ 	<delete id="deleteRecordById" parameterType="map">
+ 		DELETE FROM
+ 			`diagnosisResult`
+ 		WHERE
+ 			`id` = #{id}
+ 	</delete>
  </mapper>

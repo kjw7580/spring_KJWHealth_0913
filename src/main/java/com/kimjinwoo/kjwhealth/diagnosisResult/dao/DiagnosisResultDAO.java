@@ -22,4 +22,6 @@ public interface DiagnosisResultDAO {
 	public List<DiagnosisResult> selectRecordDiagnosisResult(@Param("userId") int userId);
 	
 	public List<DiagnosisResult> selectMyPageDiagnosisResult(@Param("userId") int userId);
+	
+	public int deleteRecordById(@Param("id") int id);
 }

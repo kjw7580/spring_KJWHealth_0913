@@ -8,6 +8,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import com.kimjinwoo.kjwhealth.common.FileManagerService;
 import com.kimjinwoo.kjwhealth.healthProducts.dao.HealthProductsDAO;
+import com.kimjinwoo.kjwhealth.healthProducts.model.Criteria;
 import com.kimjinwoo.kjwhealth.healthProducts.model.HealthProducts;
 
 @Service
@@ -38,5 +39,17 @@ public class HealthProductsBO {
 	
 	public HealthProducts getHealthProductsById(int id) {
 		return healthProductsDAO.selectHealthProductsById(id);
+	}
+	
+	public List<HealthProducts> listPaging(int page) throws Exception { 
+		return healthProductsDAO.listPaging(page);
+	}
+	
+	public List<HealthProducts> listCriteria(Criteria criteria) throws Exception { 
+		return healthProductsDAO.listCriteria(criteria);
+	}
+	
+	public int countArticles(Criteria criteria) throws Exception { 
+		return healthProductsDAO.countArticles(criteria);
 	}
 }

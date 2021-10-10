@@ -55,4 +55,50 @@
  		WHERE
  			`id` = #{id}
  	</select>
+ 	
+ 	<select id="listPaging" parameterType="map" resultType="com.kimjinwoo.kjwhealth.healthProducts.model.HealthProducts"> 
+	 	 
+	 	SELECT 
+		 	`id`
+ 			,`minBMI`
+ 			, `maxBMI`
+ 			, `name`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+	 	FROM 
+	 		`healthproducts` 
+	 	<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{page}, 9
+	 	 
+ 	</select>
+ 	
+ 	<select id="listCriteria" parameterType="map" resultType="com.kimjinwoo.kjwhealth.healthProducts.model.HealthProducts">
+	 	SELECT 
+	 		`id`
+ 			,`minBMI`
+ 			, `maxBMI`
+ 			, `name`
+ 			, `imagePath`
+ 			, `createdAt`
+ 			, `updatedAt`
+	 	FROM 
+	 		`healthproducts`
+	 	<![CDATA[ 
+	 	WHERE `id` > 0
+	 	]]> 
+	 	ORDER BY `id` DESC, `createdAt` DESC 
+	 	LIMIT #{pageStart}, #{perPageNum}
+ 	</select>
+ 	
+ 	<select id="countArticles" resultType="int"> 
+	 	SELECT COUNT(`id`) 
+	 	FROM `healthproducts`
+	 	<![CDATA[ 
+	 		WHERE `id` > 0 
+	 	]]> 
+ 	</select>
  </mapper>
