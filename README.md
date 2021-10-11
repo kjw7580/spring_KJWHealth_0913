@@ -30,7 +30,7 @@
 
 # :movie_camera: KJW Health 전체 기능 시연 및 설명 영상
 
-![Responsice Mockup](https://cdn.pixabay.com/photo/2016/07/03/18/36/youtube-1495277__340.png)
+[![Watch the video](https://user-images.githubusercontent.com/86758906/136792181-a525fe15-f04e-448b-af29-3712ff3ebcf7.png)](https://youtu.be/rD2_dO5Zmkg)
 
 ## :book: 프로젝트 설명
 
