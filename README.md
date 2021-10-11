@@ -21,6 +21,7 @@
 ![Git](https://img.shields.io/badge/-Git-05122A?style=flat&logo=git)&nbsp;
 ![GitHub](https://img.shields.io/badge/-GitHub-05122A?style=flat&logo=github)&nbsp;
 ![Markdown](https://img.shields.io/badge/-Markdown-05122A?style=flat&logo=markdown)&nbsp;
+![Youtube Badge](https://img.shields.io/badge/-Youtube-05122A?style=flat&logo=youtube)&nbsp;
 
 </div>
 
@@ -31,6 +32,16 @@
 # :movie_camera: KJW Health 전체 기능 시연 및 설명 영상
 
 [![Watch the video](https://user-images.githubusercontent.com/86758906/136792181-a525fe15-f04e-448b-af29-3712ff3ebcf7.png)](https://youtu.be/rD2_dO5Zmkg)
+
+### 기능별 영상 시간 :pushpin: Check
+* ### 00:00 ~ 01:06 회원가입 / 로그인
+* ### 01:16 ~ 02:28 진단하기 / 진단결과
+* ### 02:28 ~ 03:10 건강 기록실
+* ### 03:10 ~ 03:45 건강용품식품 / 식단레시피 화면 리스트
+* ### 03:45 ~ 06:35 건강 공유 게시판 모든 기능
+* ### 06:51 ~ 07:13 userId 별 페이징
+* ### 07:13 ~ 07:35 마이 페이지
+* ### 07:35 ~ 08:19 관리자 페이지
 
 ## :book: 프로젝트 설명
 
@@ -77,13 +88,36 @@
 
 ![](https://img.shields.io/badge/Tomcat-Apache%20License%202.0-brightgreen)&nbsp;
 ![](https://img.shields.io/badge/Spring%20framework-Apache%20License%202.0-orange)&nbsp;
-<br>
+<br><br>
 ![](https://img.shields.io/badge/Mysql-GPLv2%20or%20proprietary-red)&nbsp;
 ![](https://img.shields.io/badge/Mybatis-Apache%20License%202.0-blue)&nbsp;
 ![](https://img.shields.io/badge/Bootstrap-MIT%20License-yellow)&nbsp;
-<br>
+<br><br>
 ![](https://img.shields.io/badge/jQuery-MIT%20License-lightgrey)&nbsp;
 ![](https://img.shields.io/badge/%EC%9D%B4%EB%AF%B8%EC%A7%80%20%EC%B6%9C%EC%B2%98-pixabay-yellowgreen)&nbsp;
+
+## :watch: Deploy History
+
+### 2021-09-08 ~ 2021-09-14
+
+- 프로젝트 기획
+- DB 설계 / URL 설계 / 일정 설계
+- 프로젝트 설정 / 세팅
+
+### 2021-09-15 ~ 2021-09-17
+
+- 모든 페이지 레이아웃 디자인 및 수정
+
+### 2021-09-18 ~ 2021-09-26
+
+- version-1 모든 기능 구현 및 테스트
+- 구현한 기능 : 게시판 / 관리자 페이지[INSERT 페이지] / 건강용품식품 화면 <br> 식단 레시피 화면 / 진단하기 화면 / 진단결과 화면 / 나의 기록실 화면 / 메인 페이지
+
+### 2021-09-27 ~ 현재
+
+- version-2 구현 중
+- 현재까지 구현된 기능 : 댓글 작성 및 삭제 / 기록실 상세페이지 및 삭제 / 게시판 검색기능 <br> 내가 쓴 게시물 View / 게시판[검색결과], 레시피, 건강용품식품, 기록실 화면 페이징 / 마이페이지
+
 
 ## :clock12: 향후 계획
 
