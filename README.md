@@ -55,6 +55,9 @@
 
  #### * package : [com.kimjinwoo.kjwhealth.*](https://github.com/kjw7580/spring_KJWHealth_0913/tree/develop/src/main/java/com/kimjinwoo/kjwhealth)
  #### * view : [/webapp/WEB-INF/jsp/*](https://github.com/kjw7580/spring_KJWHealth_0913/tree/develop/src/main/webapp/WEB-INF/jsp)
+ #### * mapper : [/resources/mappers/*](https://github.com/kjw7580/spring_KJWHealth_0913/tree/develop/src/main/resources/mappers)
+ #### * yml 설정 : [/resources/application.yml](https://github.com/kjw7580/spring_KJWHealth_0913/blob/develop/src/main/resources/application.yml)
+ #### * gradle 설정 : [build.gradle](https://github.com/kjw7580/spring_KJWHealth_0913/blob/develop/build.gradle)
  
  * 진단하기
   #### - 진단하기 과정에서 BMI정보를 저장 -> 저장된 정보를 통해 BMI수치 획득
