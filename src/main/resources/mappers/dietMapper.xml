@@ -77,7 +77,7 @@
 	 	WHERE `id` > 0
 	 	]]> 
 	 	ORDER BY `id` DESC, `createdAt` DESC 
-	 	LIMIT #{page}, 5
+	 	LIMIT #{page}, 3
 	 	 
  	</select>
  	

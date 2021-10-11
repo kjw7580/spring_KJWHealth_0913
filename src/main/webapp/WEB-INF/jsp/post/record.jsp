@@ -85,7 +85,7 @@
 					data:{"id":id},
 					success:function(data){
 						if(data.result == "success"){
-							alert("기록 삭제 성공");
+//							alert("기록 삭제 성공");
 							location.reload();
 						}else{
 							alert("기록 삭제 실패");

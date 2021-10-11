@@ -254,7 +254,7 @@
 					success:function(data) {
 						if(data.result == "success") {
 							var bmi = data.bmi;
-							alert("입력 성공");
+//							alert("입력 성공");
 							if(bmi < 18.5) {
 								document.getElementById("BMIResult").innerHTML = "<font color=blue>" + bmi + "</font>";
 								document.getElementById("BMIText").innerHTML = "<font color=blue>저체중입니다.</font>";

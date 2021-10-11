@@ -110,7 +110,7 @@
 					success:function(data) {
 						
 						if(data.result == "success") {
-							alert("수정 성공");
+							alert("수정 되었습니다.");
 							location.reload();
 						} else {
 							alert("수정 실패");
@@ -179,7 +179,7 @@
 					data:{"id":id},
 					success:function(data){
 						if(data.result == "success"){
-							alert("댓글 삭제 성공");
+//							alert("댓글 삭제 성공");
 							location.reload();
 						}else{
 							alert("댓글 삭제 실패");

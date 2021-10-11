@@ -28,6 +28,15 @@
 		
 		<c:forEach var="diet" items="${articles }" varStatus="status">
 			<div class="mt-5">
+				<div class="card mb-3">
+					<img class="card-img-top" src="${diet.imagePath }" alt="Card image cap">
+					<div class="card-body">
+						<h5 class="card-title">${diet.name }</h5>
+						<p class="card-text">${diet.recipe }</p>
+						<p class="card-text"><small class="text-muted">Last updated ${diet.updatedAt }</small></p>
+					</div>
+				</div>
+				<!-- 
 				<div class="card bg-dark text-dark">
 					<img class="card-img" src="${diet.imagePath }" alt="Card image" height="500px">
 					<div class="card-img-overlay">
@@ -35,6 +44,7 @@
 						<p class="card-text">${diet.recipe }</p>
 					</div>
 				</div>
+				 -->
 				<!-- 
 				<div class="d-flex">
 					<img src="${diet.imagePath }" width="300px" height="300px">

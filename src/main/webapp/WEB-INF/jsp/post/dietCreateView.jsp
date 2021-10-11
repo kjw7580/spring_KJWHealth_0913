@@ -89,8 +89,8 @@
 					data:formData,
 					success:function(data) {
 						if(data.result == "success") {
+							alert("저장 되었습니다.");
 							location.reload();
-							alert("저장 성공");
 						} else {
 							alert("저장을 실패했습니다!");
 						}

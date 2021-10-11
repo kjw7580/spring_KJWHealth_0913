@@ -168,7 +168,7 @@
 					data:{"selfDiagnosisId":selfDiagnosisString, "dietId":dietString, "healthProductsId":healthProductsString},
 					success:function(data) {
 						if(data.result == "success") {
-							alert("기록 성공");
+							alert("기록 되었습니다.");
 							location.reload();
 						} else {
 							alert("기록을 실패했습니다!");

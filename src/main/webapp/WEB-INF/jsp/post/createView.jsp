@@ -89,7 +89,7 @@
 					success:function(data) {
 						if(data.result == "success") {
 							location.href="/post/list_view";
-							alert("글 쓰기 성공");
+//							alert("글 쓰기 성공");
 						} else {
 							alert("글 쓰기에 실패했습니다!");
 						}

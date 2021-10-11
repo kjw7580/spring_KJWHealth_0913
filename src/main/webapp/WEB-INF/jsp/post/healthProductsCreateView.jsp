@@ -80,7 +80,8 @@
 					data:formData,
 					success:function(data) {
 						if(data.result == "success") {
-							alert("저장 성공");
+							alert("저장 되었습니다.");
+							location.reload();
 						} else {
 							alert("저장을 실패했습니다!");
 						}
