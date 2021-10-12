@@ -21,7 +21,6 @@ import com.kimjinwoo.kjwhealth.diet.bo.DietBO;
 import com.kimjinwoo.kjwhealth.diet.model.Diet;
 import com.kimjinwoo.kjwhealth.healthProducts.bo.HealthProductsBO;
 import com.kimjinwoo.kjwhealth.healthProducts.model.HealthProducts;
-import com.kimjinwoo.kjwhealth.record.bo.RecordBO;
 import com.kimjinwoo.kjwhealth.selfDiagnosis.bo.SelfDiagnosisBO;
 import com.kimjinwoo.kjwhealth.selfDiagnosis.model.SelfDiagnosis;
 
@@ -29,8 +28,8 @@ import com.kimjinwoo.kjwhealth.selfDiagnosis.model.SelfDiagnosis;
 @RequestMapping("/post")
 public class RecordController {
 	
-	@Autowired
-	private RecordBO recordBO;
+//	@Autowired
+//	private RecordBO recordBO;
 	
 	@Autowired
 	private SelfDiagnosisBO selfDiagnosisBO;
@@ -54,9 +53,9 @@ public class RecordController {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		List<Record> record = recordBO.getRecord();
-		
-		model.addAttribute("record", record);
+//		List<Record> record = recordBO.getRecord();
+//		
+//		model.addAttribute("record", record);
 		
 		List<SelfDiagnosis> selfDiagnosis = selfDiagnosisBO.getSelfDiagnosis();
 		
@@ -100,9 +99,9 @@ public class RecordController {
 		
 		int userId = (Integer)session.getAttribute("userId");
 		
-		List<Record> record = recordBO.getRecord();
-		
-		model.addAttribute("record", record);
+//		List<Record> record = recordBO.getRecord();
+//		
+//		model.addAttribute("record", record);
 		
 		List<SelfDiagnosis> selfDiagnosis = selfDiagnosisBO.getSelfDiagnosis();
 		
