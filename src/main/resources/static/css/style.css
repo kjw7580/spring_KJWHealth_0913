@@ -65,6 +65,10 @@ header {
 	border:solid 3px skyblue;
 }
 
+.post-image-box {
+	border:solid 1px skyblue;
+}
+
 .detail-record-view {
 	border:solid 3px black;
 }

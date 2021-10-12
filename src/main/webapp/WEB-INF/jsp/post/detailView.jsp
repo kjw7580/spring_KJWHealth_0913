@@ -53,7 +53,7 @@
 					-->
 					
 					<c:if test="${not empty postWithComments.post.imagePath }">
-						<img class="mt-3" src="${postWithComments.post.imagePath }">
+						<div class="post-image-box mt-3 mb-3 text-center"><img class="mt-3 mb-3" src="${postWithComments.post.imagePath }"></div>
 					</c:if>
 					
 					<!-- 댓글 -->
