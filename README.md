@@ -52,7 +52,7 @@
 
 ## :page_facing_up: 포트폴리오
 
-### 준비중...
+### 링크를 클릭해주세요!! [포트폴리오](portfolio.pdf) 
 
 ## :mag_right: 설계
 
