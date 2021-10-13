@@ -34,14 +34,14 @@
 [![Watch the video](https://user-images.githubusercontent.com/86758906/136792181-a525fe15-f04e-448b-af29-3712ff3ebcf7.png)](https://youtu.be/rD2_dO5Zmkg)
 
 ### 기능별 영상 시간 :pushpin: Check
-* ### 00:00 ~ 01:06 회원가입 / 로그인
-* ### 01:16 ~ 02:28 진단하기 / 진단결과
-* ### 02:28 ~ 03:10 건강 기록실
-* ### 03:10 ~ 03:45 건강용품식품 / 식단레시피 화면 리스트
-* ### 03:45 ~ 06:35 건강 공유 게시판 모든 기능
-* ### 06:51 ~ 07:13 userId 별 페이징
-* ### 07:13 ~ 07:35 마이 페이지
-* ### 07:35 ~ 08:19 관리자 페이지
+* ### [00:00 ~ 01:06](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=0s) 회원가입 / 로그인
+* ### [01:16 ~ 02:28](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=76s) 진단하기 / 진단결과
+* ### [02:28 ~ 03:10](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=148s) 건강 기록실
+* ### [03:10 ~ 03:45](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=190s) 건강용품식품 / 식단레시피 화면 리스트
+* ### [03:45 ~ 06:35](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=225s) 건강 공유 게시판 모든 기능
+* ### [06:51 ~ 07:13](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=411s) userId 별 페이징
+* ### [07:13 ~ 07:35](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=433s) 마이 페이지
+* ### [07:35 ~ 08:19](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=455s) 관리자 페이지
 
 ## :book: 프로젝트 설명
 
@@ -78,11 +78,6 @@
   #### - 기록된 진단결과 저장 -> 저장된 진단결과에 대한 정보들 보러가기 기능
  * 건강 공유 게시판 (글 작성, 수정, 삭제, 댓글, 페이징, 검색)
   #### - 유저끼리 정보를 공유를 할 수 있는 게시판 [글 작성, 수정, 삭제, 댓글, 페이징, 검색]기능 포함
- 
- 
-## :computer: 데모
-
-### 준비중...
 
 ## :scroll: License
 
