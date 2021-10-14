@@ -43,6 +43,10 @@
 * ### [07:13 ~ 07:35](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=433s) 마이 페이지
 * ### [07:35 ~ 08:19](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=455s) 관리자 페이지
 
+## :electric_plug: AWS 접속주소 : http://3.38.117.161:8080/post/main
+ * ### 테스트용 계정 ID : test
+ * ### 테스트용 계정 Password : asdf 
+
 ## :book: 프로젝트 설명
 
 * 코로나로 인해 평소보다 건강관리가 안되고 있는 시점에서 생각한 프로젝트 개발
