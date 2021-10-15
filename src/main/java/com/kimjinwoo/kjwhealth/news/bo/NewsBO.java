@@ -3,13 +3,15 @@ package com.kimjinwoo.kjwhealth.news.bo;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.kimjinwoo.kjwhealth.common.FileManagerService;
-import com.kimjinwoo.kjwhealth.news.model.Criteria;
 import com.kimjinwoo.kjwhealth.news.dao.NewsDAO;
+import com.kimjinwoo.kjwhealth.news.model.Criteria;
 import com.kimjinwoo.kjwhealth.news.model.News;
 
+@Service
 public class NewsBO {
 	
 	@Autowired

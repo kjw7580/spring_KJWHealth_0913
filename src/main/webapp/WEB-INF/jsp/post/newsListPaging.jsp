@@ -5,7 +5,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>KJW Health - 건강용품/식품</title>
+<title>KJW Health - 건강 뉴스</title>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>        
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
@@ -20,35 +20,22 @@
 		
 		<div class="d-flex justify-content-between align-items-center">
 			<blockquote class="blockquote mt-3">
-				<h1><p class="mb-0">건강용품/식품</p></h1>
-				<footer class="blockquote-footer">KJW Health <cite title="Source Title">Health Products</cite></footer>
+				<h1><p class="mb-0">건강 뉴스</p></h1>
+				<footer class="blockquote-footer">KJW Health <cite title="Source Title">News</cite></footer>
 			</blockquote>
 			<a href="/post/main" class="btn btn-success">홈으로 돌아가기</a>
 		</div>
 		
 		<section>
 			<div class="d-flex">
-				<div class="col-2">
-					<ul class="list-group mt-4">
-						<li class="list-group-item font-weight-bold">Category</li>
-						<li class="list-group-item list-group-item-primary">list group item</li>
-						<li class="list-group-item list-group-item-secondary">list group item</li>
-						<li class="list-group-item list-group-item-success">list group item</li>
-						<li class="list-group-item list-group-item-danger">list group item</li>
-						<li class="list-group-item list-group-item-warning">list group item</li>
-						<li class="list-group-item list-group-item-info">list group item</li>
-						<li class="list-group-item list-group-item-light">list group item</li>
-						<li class="list-group-item list-group-item-dark">list group item</li>
-					</ul>
-				</div>
 				
 				<div class="col-10 bg-light mt-4">
 					<div class="d-flex justify-content-between align-items-center flex-wrap">
-						<c:forEach var="product" items="${articles }" varStatus="status">
+						<c:forEach var="news" items="${articles }" varStatus="status">
 							<div class="card mt-2" style="width: 250px;">
-							<img class="card-img-top" src="${product.imagePath }" alt="Card image cap">
+							<img class="card-img-top" src="${news.imagePath }" alt="Card image cap">
 								<div class="card-body">
-									<h2>${product.name }</h2>
+									<h2>${news.title }</h2>
 								</div>
 							</div>
 						</c:forEach>
