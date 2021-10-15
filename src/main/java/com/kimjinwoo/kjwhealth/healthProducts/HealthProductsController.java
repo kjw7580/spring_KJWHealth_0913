@@ -74,7 +74,7 @@ public class HealthProductsController {
 	}
 	
 	@GetMapping("/detail_health_products")
-	public String detailRecordView(Model model
+	public String detailHealthProductsView(Model model
 			, @RequestParam("id") int id
 			, HttpServletRequest request) {
 		
