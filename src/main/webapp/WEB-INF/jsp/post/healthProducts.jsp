@@ -31,14 +31,14 @@
 				<div class="col-2">
 					<ul class="list-group mt-4">
 						<li class="list-group-item font-weight-bold">Category</li>
-						<li class="list-group-item list-group-item-primary">list group item</li>
-						<li class="list-group-item list-group-item-secondary">list group item</li>
-						<li class="list-group-item list-group-item-success">list group item</li>
-						<li class="list-group-item list-group-item-danger">list group item</li>
-						<li class="list-group-item list-group-item-warning">list group item</li>
-						<li class="list-group-item list-group-item-info">list group item</li>
-						<li class="list-group-item list-group-item-light">list group item</li>
-						<li class="list-group-item list-group-item-dark">list group item</li>
+						<li class="list-group-item list-group-item-primary">구현예정!!</li>
+						<li class="list-group-item list-group-item-secondary">구현예정</li>
+						<li class="list-group-item list-group-item-success">구현예정</li>
+						<li class="list-group-item list-group-item-danger">구현예정</li>
+						<li class="list-group-item list-group-item-warning">구현예정</li>
+						<li class="list-group-item list-group-item-info">구현예정</li>
+						<li class="list-group-item list-group-item-light">구현예정</li>
+						<li class="list-group-item list-group-item-dark">구현예정</li>
 					</ul>
 				</div>
 				
