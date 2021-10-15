@@ -6,10 +6,10 @@
 </head>
 <header class="d-flex align-items-center justify-content-between">
 	<nav class="navbar navbar-light">
-		<a class="navbar-brand" href="#">
-			<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="40" height="40" class="d-inline-block align-top" alt="">
+		<a class="navbar-brand d-flex" href="/post/main">
+			<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="40" height="40" class="d-inline-block align-top mt-1" alt="">
+			<h1 class="font-weight-bold text-primary ml-3">KJW Health</h1>
 		</a>
-		<h1 class="font-weight-bold text-primary">KJW Health</h1>
 	</nav>
 	
 	<c:choose>
