@@ -114,7 +114,7 @@
 					</div>
 					 -->
 					<blockquote class="blockquote mt-3">
-						<h1><p class="mb-0">자가진단</p></h1>
+						<h1><p class="mb-0">자가진단 [준비중!]</p></h1>
 						<footer class="blockquote-footer">KJW Health <cite title="Source Title">Self Diagnosis</cite></footer>
 					</blockquote>
 				</div>

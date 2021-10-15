@@ -204,7 +204,7 @@
 							<a class="navbar-brand" href="#">
 								<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
 							</a>
-							<h2 class="font-weight-bold">건강 뉴스</h2>
+							<h2 class="font-weight-bold">건강 뉴스 [준비중!]</h2>
 						</nav>
 	        		</div>
 					<div class="text-right mb-3">
