@@ -70,6 +70,18 @@
 					
 				});
 			});
+
+	        $("#loginIdInput").keydown(function (key) {
+	            if (key.keyCode == 13) { 
+	                $("#passwordInput").focus();
+	            }
+	        });
+	        
+	        $("#passwordInput").keydown(function (key) {
+	            if (key.keyCode == 13) { 
+	            	$("#loginBtn").click();
+	            }
+	        });
 		});
 	</script>
 </body>

@@ -31,7 +31,7 @@
 					<img src="${product.imagePath }" width="300px" height="300px" class="img-thumbnail" alt="Cinque Terre">
 					<div class="detail-health-products form-control ml-4">
 						<h2 id="healthProductsName">${product.name }</h2>
-						<h1>설명</h1>
+						<h1>건강용품/식품 설명 [추가 예정!]</h1>
 					</div>
 				</div>
 			</c:forEach>
