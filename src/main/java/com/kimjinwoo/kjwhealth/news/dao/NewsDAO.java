@@ -16,7 +16,9 @@ public interface NewsDAO {
 			, @Param("imagePath") String imagePath
 			, @Param("content") String content);
 	
-	public List<News> selectNews();
+	public List<News> selectNews(@Param("id") int id);
+	
+	public List<News> selectMainNews();
 	
 	public List<News> listCriteria(Criteria criteria);
 	

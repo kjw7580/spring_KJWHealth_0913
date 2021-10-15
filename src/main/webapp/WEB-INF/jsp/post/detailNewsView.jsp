@@ -27,15 +27,14 @@
 		</div>
 		<div class="mt-3">
 			<c:forEach var="news" items="${newsList }" varStatus="status">
-				<div class="d-flex mt-3">
-					<img src="${news.imagePath }">
-					<div class="detail-health-products form-control ml-4">
-						<h2>${product.title }</h2>
-						<h2>${product.content }</h2>
-					</div>
+				<div class="detail-news-box mt-3 text-center form-control">
+					<h1 class="mt-3 display-3 font-weight-bold">${news.title }</h1>
+					<img src="${news.imagePath }" width="1100px" class="mt-5 mb-5">
+					<h2>${news.content }</h2>
 				</div>
 			</c:forEach>
 		</div>
+		<hr>
 		<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 	</div>
 </body>

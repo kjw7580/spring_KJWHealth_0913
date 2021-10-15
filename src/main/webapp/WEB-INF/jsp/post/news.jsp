@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,14 +30,23 @@
 		<section>
 			<div class="d-flex">
 				
-				<div class="col-10 bg-light mt-4">
+				<div class="col-12 bg-light mt-4">
 					<div class="d-flex justify-content-between align-items-center flex-wrap">
 						<c:forEach var="news" items="${articles }" varStatus="status">
-							
-							<img class="card-img-top" src="${news.imagePath }" alt="Card image cap">
-								<div class="card-body">
-									<h2>${news.title }</h2>
+							<div>
+								<div class="text-right font-weight-bold mb-2 mt-2">
+									<a href="/post/detail_news?id=${news.id }">자세히 보기</a>
 								</div>
+								<img src="${news.imagePath }" width="300px" height="300px" class="img-thumbnail" alt="Cinque Terre">
+								<c:choose>
+							        <c:when test="${fn:length(news.title) gt 11}">
+							        	<h2><c:out value="${fn:substring(news.title, 0, 10)}" />...</h2>
+							        </c:when>
+							        <c:otherwise>
+							        	<h2><c:out value="${news.title}" />...</h2>
+							        </c:otherwise>
+								</c:choose>
+							</div>
 							
 						</c:forEach>
 					</div>
@@ -47,15 +57,15 @@
 				<nav aria-label="Contacts Page Navigation"> 
 					<ul class="pagination justify-content-center m-0"> 
 						<c:if test="${pageMaker.prev}"> 
-							<li class="page-item"><a class="page-link" href="/post/health_products_list_paging?page=${pageMaker.startPage - 1}">이전</a></li> 
+							<li class="page-item"><a class="page-link" href="/post/news_list_paging?page=${pageMaker.startPage - 1}">이전</a></li> 
 						</c:if> 
 						<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx"> 
 							<li class="page-item" <c:out value="${pageMaker.criteria.page == idx ? 'class=active' : ''}"/>> 
-								<a class="page-link" href="/post/health_products_list_paging?page=${idx}">${idx}</a> 
+								<a class="page-link" href="/post/news_list_paging?page=${idx}">${idx}</a> 
 							</li> 
 						</c:forEach> 
 						<c:if test="${pageMaker.next && pageMaker.endPage > 0}"> 
-							<li class="page-item"><a class="page-link" href="/post/health_products_list_paging?page=${pageMaker.endPage + 1}">다음</a></li> 
+							<li class="page-item"><a class="page-link" href="/post/news_list_paging?page=${pageMaker.endPage + 1}">다음</a></li> 
 						</c:if> 
 					</ul> 
 				</nav> 

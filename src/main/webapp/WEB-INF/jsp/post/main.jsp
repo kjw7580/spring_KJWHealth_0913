@@ -29,6 +29,7 @@
 					<a class="nav-item nav-link active" href="/post/diagnosis">진단하기 <span class="sr-only">(current)</span></a>
 					<a class="nav-item nav-link" href="/post/health_products">건강용품/식품</a>
 					<a class="nav-item nav-link" href="/post/list_view">건강 정보 공유</a>
+					<a class="nav-item nav-link" href="/post/news">건강 뉴스</a>
 					<a class="nav-item nav-link" href="/post/record">나의 건강 기록</a>
 				</div>
 			</div>
@@ -70,6 +71,9 @@
 					</li>
 					<li class="nav-item navbar-brand active">
 						<a class="nav-link font-weight-bold" href="/post/list_view">건강 정보 공유</a>
+					</li>
+					<li class="nav-item navbar-brand active">
+						<a class="nav-link font-weight-bold" href="/post/news">건강 뉴스</a>
 					</li>
 					<li class="nav-item navbar-brand active">
 						<a class="nav-link font-weight-bold" href="/post/record">나의 건강 기록</a>
@@ -204,13 +208,19 @@
 							<a class="navbar-brand" href="#">
 								<img src="https://cdn.pixabay.com/photo/2012/04/14/12/39/alphabets-33748_960_720.png" width="30" height="30" class="d-inline-block align-top" alt="">
 							</a>
-							<h2 class="font-weight-bold">건강 뉴스 [준비중!]</h2>
+							<h2 class="font-weight-bold">건강 뉴스</h2>
 						</nav>
 	        		</div>
 					<div class="text-right mb-3">
-		        		<a href="#" class="font-weight-bold mt-2 mr-3">전체보기</a>
+		        		<a href="/post/news" class="font-weight-bold mt-2 mr-3">전체보기</a>
 		        	</div>
-			       	<div><img src="https://cdn.pixabay.com/photo/2014/05/21/22/28/old-newspaper-350376__340.jpg" width="350px" height="300px"></div>
+			       	<c:forEach var="news" items="${mainNewshList }" varStatus="status">
+			       		<div>
+				       		<img src="${news.imagePath }" width="150">
+				       		
+				       		<div class="font-weight-bold"><a href="/post/detail_news?id=${news.id }">${news.title }</a></div>
+			       		</div>
+			       	</c:forEach>
 	        	</div>
         	</div>
         </section>

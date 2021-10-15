@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import com.kimjinwoo.kjwhealth.news.bo.NewsBO;
 import com.kimjinwoo.kjwhealth.news.model.Criteria;
@@ -56,11 +57,13 @@ public class NewsController {
 	}
 	
 	@GetMapping("/detail_news")
-	public String detailNewsView(Model model) {
+	public String detailNewsView(Model model
+			, Criteria criteria
+			, @RequestParam("id") int id) throws Exception {
 		
-		List<News> NewsList = newsBO.getNews();
+		List<News> newsList = newsBO.getNews(id);
 		
-		model.addAttribute("NewsList", NewsList);
+		model.addAttribute("newsList", newsList);
 		
 		return "post/detailNewsView";
 	}

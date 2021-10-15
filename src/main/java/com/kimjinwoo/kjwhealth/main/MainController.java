@@ -17,6 +17,8 @@ import com.kimjinwoo.kjwhealth.diet.bo.DietBO;
 import com.kimjinwoo.kjwhealth.diet.model.Diet;
 import com.kimjinwoo.kjwhealth.healthProducts.bo.HealthProductsBO;
 import com.kimjinwoo.kjwhealth.healthProducts.model.HealthProducts;
+import com.kimjinwoo.kjwhealth.news.bo.NewsBO;
+import com.kimjinwoo.kjwhealth.news.model.News;
 import com.kimjinwoo.kjwhealth.post.bo.PostBO;
 import com.kimjinwoo.kjwhealth.post.model.Post;
 
@@ -36,6 +38,9 @@ public class MainController {
 	@Autowired
 	private DiagnosisResultBO diagnosisResultBO;
 	
+	@Autowired
+	private NewsBO NewsBO;
+	
 	@GetMapping("/main")
 	public String mainView(Model model) {
 		
@@ -50,6 +55,10 @@ public class MainController {
 		List<Post> mainHealthList = postBO.getMainHealthList();
 		
 		model.addAttribute("mainHealthList", mainHealthList);
+		
+		List<News> mainNewshList = NewsBO.getMainNews();
+		
+		model.addAttribute("mainNewshList", mainNewshList);
 		
 		return "post/main";
 	}

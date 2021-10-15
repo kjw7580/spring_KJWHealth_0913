@@ -33,8 +33,12 @@ public class NewsBO {
 		return newsDAO.insertNews(title, filePath, content);
 	}
 	
-	public List<News> getNews() {
-		return newsDAO.selectNews();
+	public List<News> getNews(int id) {
+		return newsDAO.selectNews(id);
+	}
+	
+	public List<News> getMainNews() {
+		return newsDAO.selectMainNews();
 	}
 	
 	public List<News> listCriteria(Criteria criteria) throws Exception { 

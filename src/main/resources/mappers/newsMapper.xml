@@ -34,6 +34,22 @@
  			, `updatedAt`
 	 	FROM 
 	 		`news`
+	 	WHERE
+	 		`id` = #{id}
+ 	</select>
+ 	
+ 	<select id="selectMainNews" parameterType="int"
+ 	resultType="com.kimjinwoo.kjwhealth.news.model.News">
+ 		SELECT
+ 			`id`
+ 			,`title`
+ 			, `imagePath`
+ 			, `content`
+ 			, `createdAt`
+ 			, `updatedAt`
+	 	FROM 
+	 		`news`
+	 	ORDER BY `id` DESC LIMIT 3
  	</select>
  	
  	<select id="listCriteria" parameterType="map" resultType="com.kimjinwoo.kjwhealth.news.model.News">

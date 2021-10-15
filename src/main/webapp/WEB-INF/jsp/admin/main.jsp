@@ -16,6 +16,7 @@
 </head>
 <body>
 	<div id="wrap">
+		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		<h1>관리자 페이지</h1>
 		
 		<div class="text-right">
@@ -27,9 +28,11 @@
 	            <li class="nav-item"><a class="nav-link" href="/post/health_products/create">건강용품/식품 저장</a></li>
 	            <li class="nav-item"><a class="nav-link" href="/post/diet/create">식단 저장</a></li>
 	            <li class="nav-item"><a class="nav-link" href="/post/self_diagnosis/create">자가진단 결과 저장</a></li>
+	            <li class="nav-item"><a class="nav-link" href="/post/news/create">건강 뉴스 저장</a></li>
 	            <li class="nav-item"><a class="nav-link" href="#">관리자 설정</a></li>
 	        </ul>
         </nav>
 	</div>
+	<c:import url="/WEB-INF/jsp/include/footer.jsp" />
 </body>
 </html>
