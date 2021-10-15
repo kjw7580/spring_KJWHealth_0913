@@ -19,17 +19,17 @@
 		<c:import url="/WEB-INF/jsp/include/header.jsp" />
 		
 		<!-- Search Bar -->
-		<nav class="navbar navbar-dark bg-primary mt-3">
+		<nav class="navbar navbar-dark bg-primary mt-1">
 			<a class="navbar-brand" href="#">Home</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 			</button>
 			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 				<div class="navbar-nav">
-					<a class="nav-item nav-link active" href="#">진단하기 <span class="sr-only">(current)</span></a>
-					<a class="nav-item nav-link" href="#">건강용품/식품</a>
-					<a class="nav-item nav-link" href="#">건강 정보 공유</a>
-					<a class="nav-item nav-link" href="#">나의 건강 기록</a>
+					<a class="nav-item nav-link active" href="/post/diagnosis">진단하기 <span class="sr-only">(current)</span></a>
+					<a class="nav-item nav-link" href="/post/health_products">건강용품/식품</a>
+					<a class="nav-item nav-link" href="/post/list_view">건강 정보 공유</a>
+					<a class="nav-item nav-link" href="/post/record">나의 건강 기록</a>
 				</div>
 			</div>
 		</nav>
