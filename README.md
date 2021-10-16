@@ -42,6 +42,8 @@
 * ### [06:51 ~ 07:13](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=411s) userId 별 페이징
 * ### [07:13 ~ 07:35](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=433s) 마이 페이지
 * ### [07:35 ~ 08:19](https://www.youtube.com/watch?v=rD2_dO5Zmkg&t=455s) 관리자 페이지
+* ### 추가기능 : 건강뉴스
+* ### 추가기능은 아래 :point_down: AWS 주소에 접속하시거나 포트폴리오에서 확인하실 수 있습니다!
 
 ## :electric_plug: AWS 접속주소 : http://3.38.117.161:8080/post/main
  * ### 테스트용 계정 ID : test
