@@ -44,7 +44,6 @@ public class PermissionInterceptor implements HandlerInterceptor {
 				return false;
 			}
 		}
-		
 		return true;
 	}
 	
